@@ -11,7 +11,8 @@ public static class Input {
 		{"Move_Up", KeyCode.W},
 		{"Move_Down", KeyCode.S},
 		{"Move_Left", KeyCode.A},
-		{"Move_Right", KeyCode.D}
+		{"Move_Right", KeyCode.D},
+		{"Pause", KeyCode.Escape}
 	};
 
 	private static ControlType type = ControlType.Keyboard;

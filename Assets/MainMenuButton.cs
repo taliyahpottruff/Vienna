@@ -5,10 +5,16 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MainMenuButton : Button {
+	public ButtonClickedEvent clickEvent;
+
 	[SerializeField]
 	private Image labelBackground;
 	[SerializeField]
 	private Color normal, highlighted;
+
+	protected override void OnEnable() {
+		clickEvent = onClick;
+	}
 
 	public override void OnPointerEnter(PointerEventData eventData) {
 		base.OnPointerEnter(eventData);

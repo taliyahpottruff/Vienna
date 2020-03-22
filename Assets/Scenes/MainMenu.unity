@@ -582,6 +582,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   labelBackground: {fileID: 116061535}
   normal: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 1}
   highlighted: {r: 0.5137255, g: 0.58431375, b: 0.654902, a: 1}
@@ -857,6 +860,9 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 828496878}
   m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+  clickEvent:
     m_PersistentCalls:
       m_Calls: []
   labelBackground: {fileID: 1931487810}

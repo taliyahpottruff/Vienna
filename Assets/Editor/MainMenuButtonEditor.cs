@@ -4,9 +4,21 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(MainMenuButton))]
-[CanEditMultipleObjects]
 public class MainMenuButtonEditor : Editor {
+	MainMenuButton button;
+
+	private void OnEnable() {
+		button = (MainMenuButton) target;
+	}
+
 	public override void OnInspectorGUI() {
-		base.OnInspectorGUI();
+		EditorGUILayout.PropertyField(serializedObject.FindProperty("normal"));
+		EditorGUILayout.PropertyField(serializedObject.FindProperty("highlighted"));
+		EditorGUILayout.PropertyField(serializedObject.FindProperty("clickEvent"));
+
+		if (button.onClick.Equals(button.clickEvent)) {
+			button.onClick = button.clickEvent;
+		}
+		serializedObject.ApplyModifiedProperties();
 	}
 }

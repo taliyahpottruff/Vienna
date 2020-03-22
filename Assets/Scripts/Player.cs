@@ -10,15 +10,16 @@ public class Player : MonoBehaviour {
 	public bool paused = false;
 
 	private UIManager uiManager;
+	private Controls controls;
 
 	private void Awake() {
 		uiManager = GameObject.FindGameObjectWithTag("Main Canvas").GetComponent<UIManager>();
+		controls = new Controls();
+		controls.UI.Pause.performed += Pause_performed;
 	}
 
-	private void Update() {
-		if (Input.ButtonPress("Pause")) {
-			paused = !paused;
-			uiManager.TogglePauseScreen(paused);
-		}
+	private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
+		paused = !paused;
+		uiManager.TogglePauseScreen(paused);
 	}
 }

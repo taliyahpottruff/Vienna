@@ -12,6 +12,12 @@ public class MainMenuButton : Button {
 	[SerializeField]
 	private Color normal, highlighted;
 
+	private SoundEffectsManager soundManager;
+
+	protected override void Awake() {
+		soundManager = FindObjectOfType<SoundEffectsManager>();
+	}
+
 	protected override void OnEnable() {
 		clickEvent = onClick;
 	}
@@ -19,13 +25,34 @@ public class MainMenuButton : Button {
 	public override void OnPointerEnter(PointerEventData eventData) {
 		base.OnPointerEnter(eventData);
 
-		StopAllCoroutines();
-		StartCoroutine(SmoothLabelBg(100f, highlighted));
+		Hover();
 	}
 
 	public override void OnPointerExit(PointerEventData eventData) {
 		base.OnPointerExit(eventData);
 
+		Unhover();
+	}
+
+	public override void OnSelect(BaseEventData eventData) {
+		base.OnSelect(eventData);
+
+		Hover();
+	}
+
+	public override void OnDeselect(BaseEventData eventData) {
+		base.OnDeselect(eventData);
+
+		Unhover();
+	}
+
+	private void Hover() {
+		StopAllCoroutines();
+		soundManager.PlaySoundEffect("menuHover");
+		StartCoroutine(SmoothLabelBg(100f, highlighted));
+	}
+
+	private void Unhover() {
 		StopAllCoroutines();
 		StartCoroutine(SmoothLabelBg(75f, normal));
 	}

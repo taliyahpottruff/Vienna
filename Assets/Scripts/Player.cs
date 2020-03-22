@@ -22,4 +22,12 @@ public class Player : MonoBehaviour {
 		paused = !paused;
 		uiManager.TogglePauseScreen(paused);
 	}
+
+	private void OnEnable() {
+		controls.Enable();
+	}
+
+	private void OnDisable() {
+		controls.Disable();
+	}
 }

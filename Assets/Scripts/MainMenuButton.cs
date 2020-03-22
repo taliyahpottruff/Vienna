@@ -37,13 +37,13 @@ public class MainMenuButton : Button {
 	public override void OnSelect(BaseEventData eventData) {
 		base.OnSelect(eventData);
 
-		Hover();
+		Debug.Log($"{gameObject.name}: Select");
 	}
 
 	public override void OnDeselect(BaseEventData eventData) {
 		base.OnDeselect(eventData);
 
-		Unhover();
+		Debug.Log($"{gameObject.name}: Deselect");
 	}
 
 	private void Hover() {

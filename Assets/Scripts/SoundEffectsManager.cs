@@ -4,11 +4,15 @@ using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 public class SoundEffectsManager : MonoBehaviour {
+	public static SoundEffectsManager singleton;
+	
 	public Dictionary<string, AudioClip> sounds;
 
 	private AudioSource source;
 
 	private void Awake() {
+		singleton = this;
+
 		source = GetComponent<AudioSource>();
 
 		sounds = new Dictionary<string, AudioClip>() {
@@ -17,6 +21,7 @@ public class SoundEffectsManager : MonoBehaviour {
 	}
 
 	public void PlaySoundEffect(string name) {
+		source.volume = GameManager.singleton.SoundVolume;
 		source.PlayOneShot(sounds[name]);
 	}
 }

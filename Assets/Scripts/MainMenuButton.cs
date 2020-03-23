@@ -5,8 +5,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MainMenuButton : Button {
-	public ButtonClickedEvent clickEvent;
-
 	[SerializeField]
 	private Image labelBackground;
 	[SerializeField]
@@ -16,10 +14,6 @@ public class MainMenuButton : Button {
 
 	protected override void Awake() {
 		soundManager = FindObjectOfType<SoundEffectsManager>();
-	}
-
-	protected override void OnEnable() {
-		clickEvent = onClick;
 	}
 
 	public override void OnPointerEnter(PointerEventData eventData) {

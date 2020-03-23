@@ -14,11 +14,7 @@ public class MainMenuButtonEditor : Editor {
 	public override void OnInspectorGUI() {
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("normal"));
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("highlighted"));
-		EditorGUILayout.PropertyField(serializedObject.FindProperty("clickEvent"));
-
-		if (button.onClick.Equals(button.clickEvent)) {
-			button.onClick = button.clickEvent;
-		}
+		EditorGUILayout.PropertyField(serializedObject.FindProperty("m_OnClick"));
 		serializedObject.ApplyModifiedProperties();
 	}
 }

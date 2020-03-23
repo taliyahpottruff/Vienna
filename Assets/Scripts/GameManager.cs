@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
 
+	[SerializeField]
+	private GameObject loadingScreen;
+
 	private void Awake() {
 		instance = this;
 
@@ -16,6 +19,7 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void LoadGame() {
+		loadingScreen.SetActive(true);
 		SceneManager.UnloadSceneAsync((int)SceneIndexes.MAIN_MENU);
 		SceneManager.LoadSceneAsync((int)SceneIndexes.GAME, LoadSceneMode.Additive);
 	}

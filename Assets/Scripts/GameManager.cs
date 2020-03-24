@@ -60,6 +60,11 @@ public class GameManager : MonoBehaviour
 		StartCoroutine(GetSceneLoadProgress());
 	}
 
+	public void GameToMenu() {
+		SceneManager.UnloadSceneAsync((int)SceneIndexes.GAME);
+		SceneManager.LoadSceneAsync((int)SceneIndexes.MAIN_MENU, LoadSceneMode.Additive);
+	}
+
 	public float GetSoundVolumeRaw() {
 		return soundVolume;
 	}

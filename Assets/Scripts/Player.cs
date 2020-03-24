@@ -12,6 +12,12 @@ public class Player : MonoBehaviour {
 	private UIManager uiManager;
 	private Controls controls;
 
+	public Living Living {
+		get {
+			return GetComponent<Living>();
+		}
+	}
+
 	private void Awake() {
 		uiManager = GameObject.FindGameObjectWithTag("Main Canvas").GetComponent<UIManager>();
 		controls = new Controls();

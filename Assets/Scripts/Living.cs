@@ -6,10 +6,7 @@ public class Living : MonoBehaviour {
     public Species species = Species.Human;
     public string firstName;
     public string lastName;
-	[SerializeField]
-	private float health;
-	[SerializeField]
-	private float maxHealth;
+	public float health, maxHealth;
 
 	#region Displays
 	private Slider healthSlider;
@@ -23,6 +20,18 @@ public class Living : MonoBehaviour {
 
 	private void Update() {
 		healthSlider.value = health;
+	}
+
+	public void LoadData(LivingData data) {
+		//First, set the data
+		species = data.species;
+		firstName = data.firstName;
+		lastName = data.lastName;
+		health = data.health;
+		maxHealth = data.maxHealth;
+
+		//Then set other stuff
+		transform.position = data.position;
 	}
 }
 

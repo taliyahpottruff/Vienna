@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 	public static GameManager singleton;
 
 	public bool paused;
+	public new GameCamera camera;
 
 	[SerializeField]
 	private GameObject loadingScreen;
@@ -108,6 +109,7 @@ public class GameManager : MonoBehaviour
 
 		//Once loading is done
 		Living player = FindObjectOfType<Player>().Living;
+		camera.SetTarget(player.transform);
 		if (GameData.Load()) {
 			Debug.Log("Load successful!");
 			player.LoadData(GameData.current.player);

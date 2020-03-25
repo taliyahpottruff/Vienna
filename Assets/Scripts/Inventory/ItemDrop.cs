@@ -6,8 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Collider2D))]
 public class ItemDrop : MonoBehaviour {
+	public string type;
+
 	[SerializeField]
-	private Food item;
+	private IBaseItem item;
 
 	private SpriteRenderer sr;
 
@@ -16,10 +18,14 @@ public class ItemDrop : MonoBehaviour {
 		sr = GetComponent<SpriteRenderer>();
 
 		//TODO: Remove this
-		Initialize(new Food() { 
-			name = "Egg",
-			sprite = "Egg"
-		});
+		switch (type) {
+			case "Bandaid":
+				Initialize(new MedicalItem("Bandaid"));
+				break;
+			default:
+				Initialize(new Food("Egg"));
+				break;
+		}
 	}
 
 	private void Start() {
@@ -38,7 +44,7 @@ public class ItemDrop : MonoBehaviour {
 		}
 	}
 
-	public void Initialize(Food item) {
+	public void Initialize(IBaseItem item) {
 		this.item = item;
 	}
 }

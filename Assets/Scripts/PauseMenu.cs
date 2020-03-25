@@ -17,15 +17,7 @@ public class PauseMenu : MonoBehaviour{
 	}
 
 	public void LoadGame() {
-		Living player = FindObjectOfType<Player>().Living;
-		if (GameData.Load()) {
-			Debug.Log("Load successful!");
-			player.LoadData(GameData.current.player);
-			FindObjectOfType<Player>().paused = false;
-			uiManager.TogglePauseScreen(false);
-		} else {
-			Debug.LogError("Load failed!");
-		}
+		GameManager.singleton.LoadGame();
 	}
 
 	public void ShowSettings() {

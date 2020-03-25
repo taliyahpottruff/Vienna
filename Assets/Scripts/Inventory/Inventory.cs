@@ -6,7 +6,9 @@ public class Inventory : MonoBehaviour {
 	[SerializeField]
 	private List<IBaseItem> items = new List<IBaseItem>();
 
-	Controls controls;
+	private Controls controls;
+
+	public List<IBaseItem> Items => items;
 
 	private void Awake() {
 		controls = new Controls();
@@ -28,6 +30,15 @@ public class Inventory : MonoBehaviour {
 	public void Add(IBaseItem item) {
 		//TODO: Stack if possible
 		items.Add(item);
+	}
+
+	public void SetItems(List<IBaseItem> items) {
+		this.items.Clear();
+		if (items != null) {
+			foreach (IBaseItem item in items) {
+				this.items.Add(item);
+			}
+		}
 	}
 
 	public void UseItem(int index) {

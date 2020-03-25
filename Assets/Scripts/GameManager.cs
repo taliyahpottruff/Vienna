@@ -72,6 +72,11 @@ public class GameManager : MonoBehaviour
 		StartCoroutine(GetSceneLoadProgress());
 	}
 
+	public void QuitGame() {
+		Debug.Log("Quitting game with Code 0");
+		Application.Quit(0);
+	}
+
 	public void GameToMenu() {
 		SceneManager.UnloadSceneAsync((int)SceneIndexes.GAME);
 		SceneManager.LoadSceneAsync((int)SceneIndexes.MAIN_MENU, LoadSceneMode.Additive);

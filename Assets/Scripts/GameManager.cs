@@ -54,6 +54,12 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	private void OnEnable() {
+		//Try to find the player and set the camera target
+		Player player = FindObjectOfType<Player>();
+		if (player != null) camera.SetTarget(player.transform);
+	}
+
 	public void LoadGame() {
 		UIManager uiManager = FindObjectOfType<UIManager>();
 		if (uiManager != null) uiManager.SetPauseScreen(false);

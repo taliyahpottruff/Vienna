@@ -5,4 +5,5 @@ public interface IBaseItem {
 	string sprite { get; set; }
 
 	int Use();
+	int GetAmount();
 }

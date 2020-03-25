@@ -21,6 +21,10 @@ public class MedicalItem : IBaseItem, IConsumable, IStackable {
 		this.maxStack = maxStack;
 	}
 
+	public int GetAmount() {
+		return stack;
+	}
+
 	public int Consume(int amount) {
 		//TODO: Add logic
 		Debug.Log($"Player is healing themselves with \"{name}\"");

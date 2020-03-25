@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
 	public static GameManager singleton;
 
+	public bool paused;
+
 	[SerializeField]
 	private GameObject loadingScreen;
 	[SerializeField]
@@ -53,7 +55,7 @@ public class GameManager : MonoBehaviour
 
 	public void LoadGame() {
 		UIManager uiManager = FindObjectOfType<UIManager>();
-		if (uiManager != null) uiManager.TogglePauseScreen(false);
+		if (uiManager != null) uiManager.SetPauseScreen(false);
 
 		loadingScreen.SetActive(true);
 		
@@ -104,7 +106,7 @@ public class GameManager : MonoBehaviour
 		if (GameData.Load()) {
 			Debug.Log("Load successful!");
 			player.LoadData(GameData.current.player);
-			if (player != null) player.GetComponent<Player>().paused = false;
+			paused = false;
 		} else {
 			Debug.LogError("Load failed! Starting a new game...");
 		}

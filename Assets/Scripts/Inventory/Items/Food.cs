@@ -22,6 +22,10 @@ public class Food : IBaseItem, IConsumable, IStackable {
 		this.maxStack = maxStack;
 	}
 
+	public int GetAmount() {
+		return stack;
+	}
+
 	public int Use() {
 		return Consume(1);
 	}

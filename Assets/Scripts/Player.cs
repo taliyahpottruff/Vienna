@@ -7,8 +7,6 @@ using UnityEngine;
  */
 
 public class Player : MonoBehaviour {
-	public bool paused = false;
-
 	private UIManager uiManager;
 	private Controls controls;
 
@@ -22,11 +20,22 @@ public class Player : MonoBehaviour {
 		uiManager = GameObject.FindGameObjectWithTag("Main Canvas").GetComponent<UIManager>();
 		controls = new Controls();
 		controls.UI.Pause.performed += Pause_performed;
+		controls.UI.Inventory.performed += Inventory_performed;
+	}
+
+	private void Inventory_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
+		if (uiManager.CanToggleInventory()) {
+			GameManager.singleton.paused = uiManager.ToggleInventory();
+		}
 	}
 
 	private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
-		paused = !paused;
-		uiManager.TogglePauseScreen(paused);
+		if (!uiManager.PausedElsewhere()) {
+			GameManager.singleton.paused = !GameManager.singleton.paused;
+			uiManager.SetPauseScreen(GameManager.singleton.paused);
+		} else {
+			if (uiManager.CanToggleInventory()) GameManager.singleton.paused = uiManager.ToggleInventory();
+		}
 	}
 
 	private void OnEnable() {

@@ -9,8 +9,8 @@ public class PauseMenu : MonoBehaviour{
 	public void SaveGame() {
 		Living player = FindObjectOfType<Player>().Living;
 		if (GameData.Save(player)) {
-			FindObjectOfType<Player>().paused = false;
-			uiManager.TogglePauseScreen(false);
+			GameManager.singleton.paused = false;
+			uiManager.SetPauseScreen(false);
 		} else {
 			Debug.LogError("There was an error saving!");
 		}

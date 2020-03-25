@@ -9891,6 +9891,7 @@ GameObject:
   - component: {fileID: 1799089486}
   - component: {fileID: 1799089485}
   - component: {fileID: 1799089487}
+  - component: {fileID: 1799089488}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Untagged
@@ -9974,11 +9975,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c516c79b37e1a4ca810993275f86b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item:
-    name: Egg
-    sprite: Egg
-    stack: 0
-    maxStack: 64
+--- !u!58 &1799089488
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799089484}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1935069027
 GameObject:
   m_ObjectHideFlags: 0
@@ -10115,6 +10127,7 @@ GameObject:
   - component: {fileID: 1965061588}
   - component: {fileID: 1965061589}
   - component: {fileID: 1965061590}
+  - component: {fileID: 1965061591}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -10264,9 +10277,22 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.56, y: 1}
+  m_Offset: {x: 0, y: 0.25}
+  m_Size: {x: 0.56, y: 0.5}
   m_Direction: 0
+--- !u!114 &1965061591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965061583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed0fab8a2e6cc1e4586d52676068dee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
 --- !u!1 &1978860650
 GameObject:
   m_ObjectHideFlags: 0

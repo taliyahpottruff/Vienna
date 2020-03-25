@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -29,9 +30,15 @@ public class Living : MonoBehaviour {
 		lastName = data.lastName;
 		health = data.health;
 		maxHealth = data.maxHealth;
+		Inventory inventory = GetComponent<Inventory>();
+		if (inventory != null) inventory.SetItems(data.inventory);
 
 		//Then set other stuff
 		transform.position = data.position;
+	}
+
+	public List<IBaseItem> GetInventoryItems() {
+		return GetComponent<Inventory>().Items;
 	}
 }
 

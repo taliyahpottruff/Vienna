@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	private void Update() {
-		rb.velocity = (player.paused) ? Vector2.zero : input * speed;
+		rb.velocity = (GameManager.singleton.paused) ? Vector2.zero : input * speed;
 	}
 
 	private void OnEnable() {

@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
 	public static GameManager singleton;
 
+	public bool paused;
+
 	[SerializeField]
 	private GameObject loadingScreen;
 	[SerializeField]
@@ -52,8 +54,18 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void LoadGame() {
+		UIManager uiManager = FindObjectOfType<UIManager>();
+		if (uiManager != null) uiManager.SetPauseScreen(false);
+
 		loadingScreen.SetActive(true);
-		scenesLoading.Add(SceneManager.UnloadSceneAsync((int)SceneIndexes.MAIN_MENU));
+		
+		//Dynamically unload all scenes that are not the persistent scene
+		for (int i = 0; i < SceneManager.sceneCount; i++) {
+			if (SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexes.MANAGER) continue;
+
+			scenesLoading.Add(SceneManager.UnloadSceneAsync((int)SceneManager.GetSceneAt(i).buildIndex));
+		}
+
 		scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.GAME, LoadSceneMode.Additive));
 
 		//Start checking the loading progress
@@ -87,6 +99,16 @@ public class GameManager : MonoBehaviour
 
 				yield return null;
 			}
+		}
+
+		//Once loading is done
+		Living player = FindObjectOfType<Player>().Living;
+		if (GameData.Load()) {
+			Debug.Log("Load successful!");
+			player.LoadData(GameData.current.player);
+			paused = false;
+		} else {
+			Debug.LogError("Load failed! Starting a new game...");
 		}
 
 		loadingScreen.gameObject.SetActive(false);

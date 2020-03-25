@@ -22,7 +22,8 @@ public class GameData {
 			firstName = player.firstName,
 			lastName = player.lastName,
 			health = player.health,
-			maxHealth = player.maxHealth
+			maxHealth = player.maxHealth,
+			inventory = player.GetInventoryItems()
 		};
 
 		return SerializationManager.Save("Save", current);

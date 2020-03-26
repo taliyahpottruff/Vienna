@@ -22,7 +22,10 @@ public class InventoryScreen : MonoBehaviour {
 	}
 
 	public void Unobserve() {
-		observed.onChange -= UpdateObservedUI;
+		if (observed != null) {
+			observed.onChange -= UpdateObservedUI;
+			observed = null;
+		}
 	}
 
 	public void ClearDisplay(List<GameObject> displayItems) {
@@ -37,7 +40,7 @@ public class InventoryScreen : MonoBehaviour {
 		for (int i = 0; i < inventory.Items.Count; i++) {
 			GameObject obj = Instantiate<GameObject>(displayItemPrefab, content);
 			InventoryScreenItem displayItem = obj.GetComponent<InventoryScreenItem>();
-			displayItem.Initialize(inventory, i);
+			displayItem.Initialize(inventory, i, observed);
 			displayItems.Add(obj);
 		}
 	}

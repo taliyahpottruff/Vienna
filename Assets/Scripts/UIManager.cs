@@ -10,6 +10,12 @@ public class UIManager : MonoBehaviour {
 	[SerializeField]
 	GameObject vitals, pauseScreen, inventory, mainInventory, observedInventory;
 
+	private InventoryScreen screen;
+
+	private void Awake() {
+		screen = inventory.GetComponentInParent<InventoryScreen>();
+	}
+
 	public void SetPauseScreen(bool newPaused) {
 		vitals.SetActive(!newPaused);
 		pauseScreen.SetActive(newPaused);
@@ -19,7 +25,10 @@ public class UIManager : MonoBehaviour {
 		bool currentStatus = inventory.activeSelf;
 		vitals.SetActive(currentStatus);
 		inventory.SetActive(!currentStatus);
-		if (!inventory.activeSelf) observedInventory.SetActive(false);
+		if (!inventory.activeSelf) {
+			observedInventory.SetActive(false);
+			screen.Unobserve();
+		}
 		return inventory.activeSelf;
 	}
 
@@ -29,7 +38,6 @@ public class UIManager : MonoBehaviour {
 		}
 
 		observedInventory.SetActive(true);
-		InventoryScreen screen = inventory.GetComponentInParent<InventoryScreen>();
 		screen.Observe(_inventory);
 	}
 

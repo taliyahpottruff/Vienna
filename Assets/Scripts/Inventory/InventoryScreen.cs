@@ -48,7 +48,7 @@ public class InventoryScreen : MonoBehaviour {
 		for (int i = 0; i < observed.Items.Count; i++) {
 			GameObject obj = Instantiate<GameObject>(displayItemPrefab, observedContent);
 			InventoryScreenItem displayItem = obj.GetComponent<InventoryScreenItem>();
-			displayItem.Initialize(observed, i);
+			displayItem.Initialize(observed, i, inventory);
 			observedItems.Add(obj);
 		}
 	}

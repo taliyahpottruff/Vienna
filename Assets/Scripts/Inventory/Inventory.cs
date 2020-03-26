@@ -37,4 +37,11 @@ public class Inventory : MonoBehaviour {
 		}
 		CallChangeEvent();
 	}
+
+	public IBaseItem RemoveItem(int index) {
+		IBaseItem item = items[index];
+		items.RemoveAt(index);
+		CallChangeEvent();
+		return item;
+	}
 }

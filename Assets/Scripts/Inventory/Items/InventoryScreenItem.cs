@@ -5,7 +5,7 @@ using TMPro;
 
 public class InventoryScreenItem : MonoBehaviour {
 	public int inventoryIndex;
-	public Inventory inventory;
+	public Inventory inventory, transferTo;
 
 	[SerializeField]
 	private Image image;
@@ -23,7 +23,18 @@ public class InventoryScreenItem : MonoBehaviour {
 		title.text = $"{item.name} x{item.GetAmount()}";
 	}
 
+	public void Initialize(Inventory inventory, int index, Inventory other) {
+		Initialize(inventory, index);
+		transferTo = other;
+	}
+
 	public void Use() {
-		inventory.UseItem(inventoryIndex);
+		if (transferTo == null) {
+			//Use the item if no transfer
+			inventory.UseItem(inventoryIndex);
+		} else {
+			//If a transfer is available, do that
+			transferTo.Add(inventory.RemoveItem(inventoryIndex));
+		}
 	}
 }

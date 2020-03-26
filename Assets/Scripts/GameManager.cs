@@ -97,6 +97,10 @@ public class GameManager : MonoBehaviour
 		return musicVolume;
 	}
 
+	public Storage[] GetStorages() {
+		return FindObjectsOfType<Storage>();
+	}
+
 	private IEnumerator GetSceneLoadProgress() {
 		foreach (AsyncOperation op in scenesLoading) {
 			while (!op.isDone) {
@@ -119,6 +123,24 @@ public class GameManager : MonoBehaviour
 		if (GameData.Load()) {
 			Debug.Log("Load successful!");
 			player.LoadData(GameData.current.player);
+
+			//Clear all entities
+			GameObject[] entityObjs = GameObject.FindGameObjectsWithTag("Entity");
+			foreach (GameObject obj in entityObjs) {
+				Destroy(obj);
+			}
+
+			//Load entities from data
+			foreach (StorageData storage in GameData.current.storages) {
+				Debug.Log(storage.type);
+				GameObject storagePrefab = Resources.Load<GameObject>($"Prefabs/Storages/{storage.type.Replace("(Clone)", "")}");
+				GameObject obj = Instantiate<GameObject>(storagePrefab, storage.position, Quaternion.identity);
+				obj.name = storagePrefab.name;
+				Storage storageComponent = obj.GetComponent<Storage>();
+				Inventory inventory = (Inventory)storageComponent.Interact();
+				inventory.SetItems(new List<IBaseItem>(storage.items));
+			}
+
 			paused = false;
 		} else {
 			Debug.LogError("Load failed! Starting a new game...");

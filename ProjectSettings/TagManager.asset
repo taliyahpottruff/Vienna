@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Health Bar
   - Main Canvas
+  - Entity
   layers:
   - Default
   - TransparentFX

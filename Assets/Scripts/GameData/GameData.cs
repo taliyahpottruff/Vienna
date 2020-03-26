@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 [Serializable]
 public class GameData {
@@ -13,7 +14,10 @@ public class GameData {
 		}
 	}
 
+	#region Data
 	public LivingData player;
+	public List<StorageData> storages = new List<StorageData>();
+	#endregion
 
 	public static bool Save(Living player) {
 		current.player = new LivingData() {
@@ -25,6 +29,17 @@ public class GameData {
 			maxHealth = player.maxHealth,
 			inventory = player.GetInventoryItems()
 		};
+
+		//Serialize storages
+		current.storages.Clear();
+		foreach (Storage storage in GameManager.singleton.GetStorages()) {
+			Inventory inv = (Inventory)storage.Interact();
+			current.storages.Add(new StorageData() { 
+				type = storage.name,
+				position = storage.transform.position,
+				items = inv.Items.ToArray()
+			});
+		}
 
 		return SerializationManager.Save("Save", current);
 	}

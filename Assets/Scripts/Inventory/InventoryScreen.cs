@@ -18,6 +18,7 @@ public class InventoryScreen : MonoBehaviour {
 	public void Observe(Inventory inv) {
 		observed = inv;
 		observed.onChange += UpdateObservedUI;
+		UpdateUI();
 		UpdateObservedUI();
 	}
 
@@ -26,6 +27,7 @@ public class InventoryScreen : MonoBehaviour {
 			observed.onChange -= UpdateObservedUI;
 			observed = null;
 		}
+		UpdateUI();
 	}
 
 	public void ClearDisplay(List<GameObject> displayItems) {

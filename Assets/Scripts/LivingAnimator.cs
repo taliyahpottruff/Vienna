@@ -11,7 +11,7 @@ public class LivingAnimator : MonoBehaviour {
 	private SpriteRenderer sr;
 	private Rigidbody2D rb;
 
-	private Direction direction;
+	private Direction direction = Direction.Down;
 	private bool moving;
 
 	private void Awake() {

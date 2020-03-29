@@ -6,7 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class LivingAnimator : MonoBehaviour {
 	public float animationSpeed = 0.1f;
-	public List<Sprite> upSprites, downSprites, sideSprites;
+	public List<Sprite> upSprites, downSprites, sideSprites, hairDownSprites, hairUpSprites, hairSideSprites;
+	public SpriteRenderer hairRenderer;
 	
 	private SpriteRenderer sr;
 	private Rigidbody2D rb;
@@ -48,12 +49,30 @@ public class LivingAnimator : MonoBehaviour {
 		}
 	}
 
+	private List<Sprite> GetHairAnimation(Direction direction) {
+		switch (direction) {
+			case Direction.Down:
+				return hairDownSprites;
+			case Direction.Up:
+				return hairUpSprites;
+			default:
+				return hairSideSprites;
+		}
+	}
+
 	private IEnumerator Animate() {
 		int index = 0;
 		while (true) {
 			List<Sprite> animation = GetAnimation(direction);
 			if (index >= animation.Count || !moving) index = 0;
-			sr.sprite = animation[index++];
+			
+			//Set main sprite
+			sr.sprite = animation[index];
+
+			//Set additional sprites
+			if (hairRenderer != null) hairRenderer.sprite = GetHairAnimation(direction)[index];
+
+			index++;
 			yield return new WaitForSeconds(animationSpeed);
 		}
 	}

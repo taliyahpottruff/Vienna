@@ -22,6 +22,8 @@ public class GameManagerChecker : MonoBehaviour {
 		if (!persistentSceneLoaded) {
 			Debug.LogWarning("Persistent scene is not loaded, reloading...");
 			SceneManager.LoadScene((int)SceneIndexes.MANAGER, LoadSceneMode.Additive);
+		} else {
+			Destroy(gameObject);
 		}
 
 	}

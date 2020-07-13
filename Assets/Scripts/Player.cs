@@ -21,6 +21,21 @@ public class Player : MonoBehaviour {
 		controls = new Controls();
 		controls.UI.Pause.performed += Pause_performed;
 		controls.UI.Inventory.performed += Inventory_performed;
+		controls.Player.Interact.performed += Interact_performed;
+	}
+
+	private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 1f, LayerMask.GetMask("Entities"));
+		if (hit) {
+			IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
+			if (interactable != null) {
+				object interacted = interactable.Interact();
+				if (interacted.GetType() == typeof(Inventory)) {
+					//Display inventory being interacted with
+					uiManager.ObserveInventory((Inventory)interacted);
+				}
+			}
+		}
 	}
 
 	private void Inventory_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {

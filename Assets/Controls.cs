@@ -145,6 +145,22 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Submit"",
+                    ""type"": ""Button"",
+                    ""id"": ""5553db3b-bda5-47a7-860f-938b0df941cc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dev Console"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d244bf0-f319-4b5d-bc56-107b584b61be"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -178,6 +194,28 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""045beb3b-eb16-4175-8bf2-5befd59ac5d4"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d4766e65-8317-497c-81ed-9b5edf374340"",
+                    ""path"": ""<Keyboard>/insert"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Dev Console"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -217,6 +255,8 @@ public class @Controls : IInputActionCollection, IDisposable
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
         m_UI_Inventory = m_UI.FindAction("Inventory", throwIfNotFound: true);
+        m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
+        m_UI_DevConsole = m_UI.FindAction("Dev Console", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -309,12 +349,16 @@ public class @Controls : IInputActionCollection, IDisposable
     private IUIActions m_UIActionsCallbackInterface;
     private readonly InputAction m_UI_Pause;
     private readonly InputAction m_UI_Inventory;
+    private readonly InputAction m_UI_Submit;
+    private readonly InputAction m_UI_DevConsole;
     public struct UIActions
     {
         private @Controls m_Wrapper;
         public UIActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Pause => m_Wrapper.m_UI_Pause;
         public InputAction @Inventory => m_Wrapper.m_UI_Inventory;
+        public InputAction @Submit => m_Wrapper.m_UI_Submit;
+        public InputAction @DevConsole => m_Wrapper.m_UI_DevConsole;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -330,6 +374,12 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Inventory.started -= m_Wrapper.m_UIActionsCallbackInterface.OnInventory;
                 @Inventory.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnInventory;
                 @Inventory.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnInventory;
+                @Submit.started -= m_Wrapper.m_UIActionsCallbackInterface.OnSubmit;
+                @Submit.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnSubmit;
+                @Submit.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnSubmit;
+                @DevConsole.started -= m_Wrapper.m_UIActionsCallbackInterface.OnDevConsole;
+                @DevConsole.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnDevConsole;
+                @DevConsole.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnDevConsole;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -340,6 +390,12 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Inventory.started += instance.OnInventory;
                 @Inventory.performed += instance.OnInventory;
                 @Inventory.canceled += instance.OnInventory;
+                @Submit.started += instance.OnSubmit;
+                @Submit.performed += instance.OnSubmit;
+                @Submit.canceled += instance.OnSubmit;
+                @DevConsole.started += instance.OnDevConsole;
+                @DevConsole.performed += instance.OnDevConsole;
+                @DevConsole.canceled += instance.OnDevConsole;
             }
         }
     }
@@ -371,5 +427,7 @@ public class @Controls : IInputActionCollection, IDisposable
     {
         void OnPause(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
+        void OnSubmit(InputAction.CallbackContext context);
+        void OnDevConsole(InputAction.CallbackContext context);
     }
 }

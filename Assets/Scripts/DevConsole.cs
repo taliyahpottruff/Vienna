@@ -63,7 +63,7 @@ public class DevConsole : MonoBehaviour {
                     GameObject.FindGameObjectWithTag("Player").GetComponent<Living>().DealDamage(damage);
                     AddTextToConsole($"Dealt {damage} to the player");
                     CloseConsole();
-                } catch (FormatException exception) {
+                } catch (FormatException) {
                     AddTextToConsole($"<color=red>Damage must be a number!</color>");
                 }
                 break;

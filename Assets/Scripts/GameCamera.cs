@@ -6,6 +6,7 @@ public class GameCamera : MonoBehaviour {
     public Transform target;
 
     public float smoothSpeed = 5f;
+    [SerializeField]
     private Vector3 offset = new Vector3(0, -0.5f, -10);
 
     public float size = 5f;

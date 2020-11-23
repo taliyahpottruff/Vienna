@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,15 +14,35 @@ public class Living : MonoBehaviour {
 	private Slider healthSlider;
 	#endregion
 
+	private Coroutine regenCoroutine;
+
 	private void Awake() {
 		healthSlider = GameObject.FindGameObjectWithTag("Health Bar").GetComponent<Slider>();
 
 		healthSlider.maxValue = maxHealth;
 	}
 
-	private void Update() {
+    private void Start() {
+		regenCoroutine = StartCoroutine(RegenerateHealth(false));
+    }
+
+    private void Update() {
 		healthSlider.value = health;
 	}
+
+	public void AddHealth(float health) {
+		this.health = Mathf.Min(this.health + health, maxHealth);
+    }
+
+	public void DealDamage(float damage) {
+		health -= damage;
+		StopCoroutine(regenCoroutine);
+		regenCoroutine = StartCoroutine(RegenerateHealth());
+
+		if (health < 0) {
+			Debug.LogError("DEAD");
+        }
+    }
 
 	public void LoadData(LivingData data) {
 		//First, set the data
@@ -40,6 +61,17 @@ public class Living : MonoBehaviour {
 	public List<IBaseItem> GetInventoryItems() {
 		return GetComponent<Inventory>().Items;
 	}
+
+	private IEnumerator RegenerateHealth(bool cooldown = true) {
+		if (cooldown) {
+			yield return new WaitForSeconds(30);
+        }
+
+		while (true) {
+			AddHealth(1);
+			yield return new WaitForSeconds(5);
+        }
+    }
 }
 
 public enum Species {

@@ -12679,7 +12679,7 @@ MonoBehaviour:
   species: 0
   firstName: Player
   lastName: Smith
-  health: 100
+  health: 50
   maxHealth: 100
 --- !u!212 &1965061586
 SpriteRenderer:

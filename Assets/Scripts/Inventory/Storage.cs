@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Vienna.Items;
 
-[RequireComponent(typeof(Inventory))]
-public class Storage : MonoBehaviour, IInteractable {
-	private Inventory inventory;
+namespace Vienna {
+	[RequireComponent(typeof(Inventory))]
+	public class Storage : MonoBehaviour, IInteractable {
+		private Inventory inventory;
 
-	private void Awake() {
-		inventory = GetComponent<Inventory>();
-		inventory.Add(new MedicalItem("Bandaid", "Egg", 24));
-	}
+		private void Awake() {
+			inventory = GetComponent<Inventory>();
+			inventory.Add(new MedicalItem("Bandaid", "Egg", 24));
+		}
 
-	public object Interact() {
-		return inventory;
+		public object Interact() {
+			return inventory;
+		}
 	}
 }

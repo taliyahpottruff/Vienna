@@ -1,9 +1,12 @@
 ﻿using System;
 using UnityEngine;
+using Vienna.Items;
 
-[Serializable]
-public class StorageData {
-	public string type;
-	public Vector2 position;
-	public IBaseItem[] items;
+namespace Vienna.Data {
+	[Serializable]
+	public class StorageData {
+		public string type;
+		public Vector2 position;
+		public IBaseItem[] items;
+	}
 }

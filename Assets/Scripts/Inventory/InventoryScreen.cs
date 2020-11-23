@@ -1,60 +1,63 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Vienna.Items;
 
-public class InventoryScreen : MonoBehaviour {
-	public Inventory inventory, observed;
-	public Transform content, observedContent;
+namespace Vienna {
+	public class InventoryScreen : MonoBehaviour {
+		public Inventory inventory, observed;
+		public Transform content, observedContent;
 
-	[SerializeField]
-	private GameObject displayItemPrefab;
+		[SerializeField]
+		private GameObject displayItemPrefab;
 
-	private List<GameObject> displayItems = new List<GameObject>(), observedItems = new List<GameObject>();
+		private List<GameObject> displayItems = new List<GameObject>(), observedItems = new List<GameObject>();
 
-	private void Awake() {
-		inventory.onChange += UpdateUI;
-	}
-
-	public void Observe(Inventory inv) {
-		observed = inv;
-		observed.onChange += UpdateObservedUI;
-		UpdateUI();
-		UpdateObservedUI();
-	}
-
-	public void Unobserve() {
-		if (observed != null) {
-			observed.onChange -= UpdateObservedUI;
-			observed = null;
+		private void Awake() {
+			inventory.OnChange += UpdateUI;
 		}
-		UpdateUI();
-	}
 
-	public void ClearDisplay(List<GameObject> displayItems) {
-		foreach (GameObject obj in displayItems) {
-			Destroy(obj);
+		public void Observe(Inventory inv) {
+			observed = inv;
+			observed.OnChange += UpdateObservedUI;
+			UpdateUI();
+			UpdateObservedUI();
 		}
-	}
 
-	private void UpdateUI() {
-		//Clear display then redraw
-		ClearDisplay(displayItems);
-		for (int i = 0; i < inventory.Items.Count; i++) {
-			GameObject obj = Instantiate<GameObject>(displayItemPrefab, content);
-			InventoryScreenItem displayItem = obj.GetComponent<InventoryScreenItem>();
-			displayItem.Initialize(inventory, i, observed);
-			displayItems.Add(obj);
+		public void Unobserve() {
+			if (observed != null) {
+				observed.OnChange -= UpdateObservedUI;
+				observed = null;
+			}
+			UpdateUI();
 		}
-	}
 
-	private void UpdateObservedUI() {
-		//Clear display then redraw
-		ClearDisplay(observedItems);
-		for (int i = 0; i < observed.Items.Count; i++) {
-			GameObject obj = Instantiate<GameObject>(displayItemPrefab, observedContent);
-			InventoryScreenItem displayItem = obj.GetComponent<InventoryScreenItem>();
-			displayItem.Initialize(observed, i, inventory);
-			observedItems.Add(obj);
+		public void ClearDisplay(List<GameObject> displayItems) {
+			foreach (GameObject obj in displayItems) {
+				Destroy(obj);
+			}
+		}
+
+		private void UpdateUI() {
+			//Clear display then redraw
+			ClearDisplay(displayItems);
+			for (int i = 0; i < inventory.Items.Count; i++) {
+				GameObject obj = Instantiate<GameObject>(displayItemPrefab, content);
+				InventoryScreenItem displayItem = obj.GetComponent<InventoryScreenItem>();
+				displayItem.Initialize(inventory, i, observed);
+				displayItems.Add(obj);
+			}
+		}
+
+		private void UpdateObservedUI() {
+			//Clear display then redraw
+			ClearDisplay(observedItems);
+			for (int i = 0; i < observed.Items.Count; i++) {
+				GameObject obj = Instantiate<GameObject>(displayItemPrefab, observedContent);
+				InventoryScreenItem displayItem = obj.GetComponent<InventoryScreenItem>();
+				displayItem.Initialize(observed, i, inventory);
+				observedItems.Add(obj);
+			}
 		}
 	}
 }

@@ -8,52 +8,54 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class SerializationManager {
-	public static bool Save(string saveName, object saveData) {
-		BinaryFormatter bf = GetBinaryFormatter();
+namespace Vienna.Data {
+	public class SerializationManager {
+		public static bool Save(string saveName, object saveData) {
+			BinaryFormatter bf = GetBinaryFormatter();
 
-		string savesFolder = Application.persistentDataPath + "/Saves";
-		if (!Directory.Exists(savesFolder)) {
-			Directory.CreateDirectory(savesFolder);
-		}
+			string savesFolder = Application.persistentDataPath + "/Saves";
+			if (!Directory.Exists(savesFolder)) {
+				Directory.CreateDirectory(savesFolder);
+			}
 
-		string path = $"{savesFolder}/{saveName}.save";
+			string path = $"{savesFolder}/{saveName}.save";
 
-		FileStream file = File.Create(path);
-		bf.Serialize(file, saveData);
-		file.Close();
-		return true;
-	}
-
-	public static object Load(string saveName) {
-		string path = Application.persistentDataPath + "/Saves/" + saveName + ".save";
-		if (!File.Exists(path)) {
-			return null;
-		}
-
-		BinaryFormatter bf = GetBinaryFormatter();
-		FileStream file = File.Open(path, FileMode.Open);
-		try {
-			object save = bf.Deserialize(file);
+			FileStream file = File.Create(path);
+			bf.Serialize(file, saveData);
 			file.Close();
-			return save;
-		} catch {
-			Debug.LogErrorFormat("Failed to load file at {0}", path);
-			file.Close();
-			return null;
+			return true;
 		}
-	}
 
-	public static BinaryFormatter GetBinaryFormatter() {
-		BinaryFormatter bf = new BinaryFormatter();
-		SurrogateSelector selector = new SurrogateSelector();
+		public static object Load(string saveName) {
+			string path = Application.persistentDataPath + "/Saves/" + saveName + ".save";
+			if (!File.Exists(path)) {
+				return null;
+			}
 
-		Vector2SerializationSurrogate vector2SerializationSurrogate = new Vector2SerializationSurrogate();
+			BinaryFormatter bf = GetBinaryFormatter();
+			FileStream file = File.Open(path, FileMode.Open);
+			try {
+				object save = bf.Deserialize(file);
+				file.Close();
+				return save;
+			} catch {
+				Debug.LogErrorFormat("Failed to load file at {0}", path);
+				file.Close();
+				return null;
+			}
+		}
 
-		selector.AddSurrogate(typeof(Vector2), new StreamingContext(StreamingContextStates.All), vector2SerializationSurrogate);
+		public static BinaryFormatter GetBinaryFormatter() {
+			BinaryFormatter bf = new BinaryFormatter();
+			SurrogateSelector selector = new SurrogateSelector();
 
-		bf.SurrogateSelector = selector;
+			Vector2SerializationSurrogate vector2SerializationSurrogate = new Vector2SerializationSurrogate();
 
-		return bf;
+			selector.AddSurrogate(typeof(Vector2), new StreamingContext(StreamingContextStates.All), vector2SerializationSurrogate);
+
+			bf.SurrogateSelector = selector;
+
+			return bf;
+		}
 	}
 }

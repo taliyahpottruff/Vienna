@@ -2,26 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
-public class SoundEffectsManager : MonoBehaviour {
-	public static SoundEffectsManager singleton;
-	
-	public Dictionary<string, AudioClip> sounds;
+namespace Vienna {
+	[RequireComponent(typeof(AudioSource))]
+	public class SoundEffectsManager : MonoBehaviour {
+		public static SoundEffectsManager singleton;
 
-	private AudioSource source;
+		public Dictionary<string, AudioClip> sounds;
 
-	private void Awake() {
-		singleton = this;
+		private AudioSource source;
 
-		source = GetComponent<AudioSource>();
+		private void Awake() {
+			singleton = this;
 
-		sounds = new Dictionary<string, AudioClip>() {
+			source = GetComponent<AudioSource>();
+
+			sounds = new Dictionary<string, AudioClip>() {
 			{"menuHover", Resources.Load<AudioClip>("Audio/Effects/Pop")}
 		};
-	}
+		}
 
-	public void PlaySoundEffect(string name) {
-		source.volume = GameManager.singleton.SoundVolume;
-		source.PlayOneShot(sounds[name]);
+		public void PlaySoundEffect(string name) {
+			source.volume = GameManager.singleton.SoundVolume;
+			source.PlayOneShot(sounds[name]);
+		}
 	}
 }

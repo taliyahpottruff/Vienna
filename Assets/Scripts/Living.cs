@@ -102,8 +102,8 @@ namespace Vienna {
                 }
 
                 // Remove all finished effects
-                foreach (var index in removalIndexes) {
-                    healthEffects.RemoveAt(index);
+                for (int i = removalIndexes.Count - 1; i >= 0; i--) {
+                    healthEffects.RemoveAt(removalIndexes[i]);
                     ExtraEffectProcessing();
                 }
 

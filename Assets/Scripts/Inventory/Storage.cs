@@ -9,7 +9,7 @@ namespace Vienna {
 
 		private void Awake() {
 			inventory = GetComponent<Inventory>();
-			inventory.Add(new MedicalItem("Bandaid", "Egg", 24));
+			inventory.Add(new MedicalItem("Bandage", "Egg", 24));
 		}
 
 		public object Interact() {

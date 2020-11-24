@@ -11,7 +11,7 @@ namespace Vienna {
 		public void SaveGame() {
 			Living player = FindObjectOfType<Player>();
 			if (GameData.Save(player)) {
-				GameManager.singleton.paused = false;
+				GameManager.singleton.Paused = false;
 				uiManager.SetPauseScreen(false);
 			} else {
 				Debug.LogError("There was an error saving!");

@@ -10,7 +10,17 @@ namespace Vienna {
 	public class GameManager : MonoBehaviour {
 		public static GameManager singleton;
 
-		public bool paused;
+		public bool Paused { get => m_paused; set {
+				m_paused = value;
+
+				if (value) {
+					Time.timeScale = 0;
+                } else {
+					Time.timeScale = 1;
+                }
+			} 
+		}
+		private bool m_paused = false;
 		public new GameCamera camera;
 
 		[SerializeField]
@@ -143,7 +153,7 @@ namespace Vienna {
 					inventory.SetItems(new List<IBaseItem>(storage.items));
 				}
 
-				paused = false;
+				Paused = false;
 			} else {
 				Debug.LogError("Load failed! Starting a new game...");
 			}

@@ -14020,16 +14020,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Entity
       objectReference: {fileID: 0}
-    - target: {fileID: 6771194725348263654, guid: 63a1090fd305db24aaba99ccdb9af9bc,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.5005574
-      objectReference: {fileID: 0}
-    - target: {fileID: 6771194725348263654, guid: 63a1090fd305db24aaba99ccdb9af9bc,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.24972129
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63a1090fd305db24aaba99ccdb9af9bc, type: 3}
 --- !u!1001 &7023386647553578525
@@ -14103,16 +14093,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Entity
-      objectReference: {fileID: 0}
-    - target: {fileID: 7071330603510394642, guid: a8935b7a43f272648b6ad7bcc117b5c9,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.50199723
-      objectReference: {fileID: 0}
-    - target: {fileID: 7071330603510394642, guid: a8935b7a43f272648b6ad7bcc117b5c9,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.24900138
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8935b7a43f272648b6ad7bcc117b5c9, type: 3}

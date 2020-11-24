@@ -52,16 +52,16 @@ namespace Vienna {
 
 		private void Inventory_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
 			if (uiManager.CanToggleInventory()) {
-				GameManager.singleton.paused = uiManager.ToggleInventory();
+				GameManager.singleton.Paused = uiManager.ToggleInventory();
 			}
 		}
 
 		private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
 			if (!uiManager.PausedElsewhere()) {
-				GameManager.singleton.paused = !GameManager.singleton.paused;
-				uiManager.SetPauseScreen(GameManager.singleton.paused);
+				GameManager.singleton.Paused = !GameManager.singleton.Paused;
+				uiManager.SetPauseScreen(GameManager.singleton.Paused);
 			} else {
-				if (uiManager.CanToggleInventory()) GameManager.singleton.paused = uiManager.ToggleInventory();
+				if (uiManager.CanToggleInventory()) GameManager.singleton.Paused = uiManager.ToggleInventory();
 			}
 		}
 

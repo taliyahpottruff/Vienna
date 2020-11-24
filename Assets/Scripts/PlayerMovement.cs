@@ -24,7 +24,7 @@ namespace Vienna {
 		}
 
 		private void Update() {
-			rb.velocity = (GameManager.singleton.paused) ? Vector2.zero : input * speed;
+			rb.velocity = (GameManager.singleton.Paused) ? Vector2.zero : input * speed;
 		}
 
 		private void OnEnable() {

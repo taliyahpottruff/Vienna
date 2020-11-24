@@ -35,14 +35,14 @@ namespace Vienna {
 
 		public void ObserveInventory(Inventory _inventory) {
 			if (CanToggleInventory() && !inventory.activeSelf) {
-				GameManager.singleton.paused = ToggleInventory();
+				GameManager.singleton.Paused = ToggleInventory();
 			}
 
 			observedInventory.SetActive(true);
 			screen.Observe(_inventory);
 		}
 
-		public bool PausedElsewhere() => (GameManager.singleton.paused && !pauseScreen.activeSelf);
-		public bool CanToggleInventory() => (GameManager.singleton.paused && inventory.activeSelf) || (!GameManager.singleton.paused && !inventory.activeSelf);
+		public bool PausedElsewhere() => (GameManager.singleton.Paused && !pauseScreen.activeSelf);
+		public bool CanToggleInventory() => (GameManager.singleton.Paused && inventory.activeSelf) || (!GameManager.singleton.Paused && !inventory.activeSelf);
 	}
 }

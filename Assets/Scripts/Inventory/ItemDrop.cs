@@ -21,12 +21,12 @@ namespace Vienna {
 
 			//TODO: Remove this
 			switch (type) {
-				case "Bandaid":
-					Initialize(new MedicalItem("Bandaid") { 
+				case "Bandage":
+					Initialize(new MedicalItem("Bandage") { 
 						healthEffect = new HealthEffect() {
 							effects = new Dictionary<string, object>() { { "healing", 5f } },
 							secondsRemaining = 30,
-							image = "Items/Bandaid"
+							image = "Items/Bandage"
                         }
 					});
 					break;

@@ -68,6 +68,33 @@ namespace Vienna {
                         AddTextToConsole($"<color=red>Damage must be a number!</color>");
                     }
                     break;
+                case "effect":
+                    if (args.Length < 1) {
+                        AddTextToConsole($"<color=red>Please specify an effect to apply!</color>");
+                    }
+
+                    switch (args[0]) {
+                        case "healing":
+                            GameObject.FindGameObjectWithTag("Player").GetComponent<Living>().healthEffects.Add(new HealthEffect() { 
+                                secondsRemaining = 30,
+                                effects = new Dictionary<string, object>() { { "healing", 5f } },
+                                image = "Items/Bandage"
+                            });
+                            CloseConsole();
+                            break;
+                        case "bleeding":
+                            GameObject.FindGameObjectWithTag("Player").GetComponent<Living>().healthEffects.Add(new HealthEffect() {
+                                secondsRemaining = 60,
+                                effects = new Dictionary<string, object>() { { "bleeding", -1f } },
+                                image = "BloodDrop"
+                            });
+                            CloseConsole();
+                            break;
+                        default:
+                            AddTextToConsole($"<color=red>That health effect was not found!</color>");
+                            break;
+                    }
+                    break;
                 default:
                     AddTextToConsole($"<color=red>No command \"{command}\" exists!</color>");
                     break;

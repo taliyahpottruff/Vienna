@@ -120,7 +120,7 @@ namespace Vienna {
 			}
 
 			//Once loading is done
-			Living player = FindObjectOfType<Player>().Living;
+			Living player = FindObjectOfType<Player>();
 			camera.SetTarget(player.transform);
 			if (GameData.Load()) {
 				Debug.Log("Load successful!");

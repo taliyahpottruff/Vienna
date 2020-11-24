@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Vienna.Items {
@@ -10,7 +11,7 @@ namespace Vienna.Items {
 		public int maxStack { get; set; }
 
 		// Properties
-		public HealthEffect healthEffect;
+		public HealthEffect healthEffect = new HealthEffect() { secondsRemaining = 30, effects = new Dictionary<string, object>() { { "healing", 5f } } };
 
 		public MedicalItem(string name) : this(name, name, 1) { }
 

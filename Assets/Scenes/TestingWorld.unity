@@ -198,6 +198,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57821911}
   m_CullTransparentMesh: 0
+--- !u!1 &206668491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 206668492}
+  - component: {fileID: 206668493}
+  m_Layer: 5
+  m_Name: Effects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &206668492
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206668491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2047511599}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -10}
+  m_SizeDelta: {x: 1000, y: 50}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &206668493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206668491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 5
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &285478400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,6 +2228,7 @@ MonoBehaviour:
   lastName: Duderson
   health: 100
   maxHealth: 100
+  healingMultiplier: 1
 --- !u!50 &1130136422
 Rigidbody2D:
   serializedVersion: 4
@@ -12803,7 +12866,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1965061587}
   - component: {fileID: 1965061586}
-  - component: {fileID: 1965061585}
   - component: {fileID: 1965061584}
   - component: {fileID: 1965061588}
   - component: {fileID: 1965061589}
@@ -12838,23 +12900,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1965061585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1965061583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9d98514186b78741ae50b181bced74c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  species: 0
-  firstName: Player
-  lastName: Smith
-  health: 50
-  maxHealth: 100
 --- !u!212 &1965061586
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12947,6 +12992,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed0cd2ec821e6a4c9e0ddf08f38c4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  species: 0
+  firstName: Player
+  lastName: Smith
+  health: 50
+  maxHealth: 100
+  healthEffects: []
 --- !u!70 &1965061590
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -13378,6 +13429,7 @@ RectTransform:
   m_Children:
   - {fileID: 311724664}
   - {fileID: 527472865}
+  - {fileID: 206668492}
   m_Father: {fileID: 2086239346}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13486,7 +13538,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa6da17b2dcd949b3eeeb0eff8574d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entity: {fileID: 1965061585}
+  entity: {fileID: 1965061589}
+  effectBar: {fileID: 206668492}
+  effectImage: {fileID: 4615679872004766576, guid: a64c5fe10fe2c6e4cb04d466fdd4d05f,
+    type: 3}
+  displayText: {fileID: 527472866}
 --- !u!1 &2086239342
 GameObject:
   m_ObjectHideFlags: 0

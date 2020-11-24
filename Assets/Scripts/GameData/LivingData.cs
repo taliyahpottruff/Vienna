@@ -13,5 +13,6 @@ namespace Vienna.Data {
 		public float health;
 		public float maxHealth;
 		public List<IBaseItem> inventory;
+		public List<HealthEffect> healthEffects;
 	}
 }

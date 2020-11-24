@@ -7,7 +7,7 @@ using Vienna.Items;
 
 namespace Vienna {
 	[RequireComponent(typeof(Rigidbody2D))]
-	public class Living : MonoBehaviour {
+	public abstract class Living : MonoBehaviour {
 		public Species species = Species.Human;
 		public string firstName;
 		public string lastName;
@@ -16,18 +16,18 @@ namespace Vienna {
 		public List<HealthEffect> healthEffects = new List<HealthEffect>();
 
 		private Coroutine regenCoroutine;
+		private int effectLength = 0;
 
 		private void Start() {
 			regenCoroutine = StartCoroutine(RegenerateHealth(false));
 			StartCoroutine(ProcessEffects());
 		}
 
-		public void AddHealth(float health) {
+		public virtual void AddHealth(float health) {
 			this.health = Mathf.Min(this.health + health, maxHealth);
-			HealthBar.instance.UpdateHealthBar();
 		}
 
-		public void DealDamage(float damage) {
+		public virtual void DealDamage(float damage) {
 			health -= damage;
 			StopCoroutine(regenCoroutine);
 			regenCoroutine = StartCoroutine(RegenerateHealth());
@@ -35,17 +35,16 @@ namespace Vienna {
 			if (health < 0) {
 				Debug.LogError("DEAD");
 			}
-
-			HealthBar.instance.UpdateHealthBar();
 		}
 
-		public void LoadData(LivingData data) {
+		public virtual void LoadData(LivingData data) {
 			//First, set the data
 			species = data.species;
 			firstName = data.firstName;
 			lastName = data.lastName;
 			health = data.health;
 			maxHealth = data.maxHealth;
+			healthEffects = (data.healthEffects != null) ? data.healthEffects : new List<HealthEffect>();
 			Inventory inventory = GetComponent<Inventory>();
 			if (inventory != null) inventory.SetItems(data.inventory);
 
@@ -70,6 +69,11 @@ namespace Vienna {
 
 		private IEnumerator ProcessEffects() {
 			while (true) {
+				if (effectLength != healthEffects.Count) {
+					effectLength = healthEffects.Count;
+					ExtraEffectProcessing();
+				}
+
 				float largestHealthMultiplier = 1f;
 				int effectIndex = 0;
 				List<int> removalIndexes = new List<int>();
@@ -84,7 +88,8 @@ namespace Vienna {
                 // Remove all finished effects
                 foreach (var index in removalIndexes) {
 					healthEffects.RemoveAt(index);
-                }
+					ExtraEffectProcessing();
+				}
 
 				// Apply effects
 				if (healingMultiplier != largestHealthMultiplier) {
@@ -96,6 +101,8 @@ namespace Vienna {
 				yield return new WaitForSeconds(1);
             }
         }
+
+		protected abstract void ExtraEffectProcessing();
 	}
 
 	public enum Species {

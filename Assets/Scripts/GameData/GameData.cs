@@ -28,7 +28,8 @@ namespace Vienna.Data {
 				lastName = player.lastName,
 				health = player.health,
 				maxHealth = player.maxHealth,
-				inventory = player.GetInventoryItems()
+				inventory = player.GetInventoryItems(),
+				healthEffects = player.healthEffects
 			};
 
 			//Serialize storages

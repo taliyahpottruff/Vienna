@@ -1,21 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Vienna.Data;
 
 /*
  * AUTHOR: Trenton Pottruff
  */
 
 namespace Vienna {
-	public class Player : MonoBehaviour {
+	public class Player : Living {
 		private UIManager uiManager;
 		private Controls controls;
-
-		public Living Living {
-			get {
-				return GetComponent<Living>();
-			}
-		}
 
 		private void Awake() {
 			uiManager = GameObject.FindGameObjectWithTag("Main Canvas").GetComponent<UIManager>();
@@ -25,7 +20,23 @@ namespace Vienna {
 			controls.Player.Interact.performed += Interact_performed;
 		}
 
-		private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
+        public override void DealDamage(float damage) {
+            base.DealDamage(damage);
+			HealthBar.instance.UpdateHealthBar();
+		}
+
+        public override void AddHealth(float health) {
+            base.AddHealth(health);
+			HealthBar.instance.UpdateHealthBar();
+		}
+
+        public override void LoadData(LivingData data) {
+            base.LoadData(data);
+			HealthBar.instance.UpdateHealthBar();
+			HealthBar.instance.UpdateEffectImages();
+		}
+
+        private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
 			RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 1f, LayerMask.GetMask("Entities"));
 			if (hit) {
 				IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
@@ -61,5 +72,9 @@ namespace Vienna {
 		private void OnDisable() {
 			controls.Disable();
 		}
-	}
+
+        protected override void ExtraEffectProcessing() {
+			HealthBar.instance.UpdateEffectImages();
+        }
+    }
 }

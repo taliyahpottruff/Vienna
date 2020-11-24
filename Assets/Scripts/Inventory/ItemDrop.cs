@@ -25,7 +25,8 @@ namespace Vienna {
 					Initialize(new MedicalItem("Bandaid") { 
 						healthEffect = new HealthEffect() {
 							effects = new Dictionary<string, object>() { { "healing", 5f } },
-							secondsRemaining = 30
+							secondsRemaining = 30,
+							image = "Items/Bandaid"
                         }
 					});
 					break;

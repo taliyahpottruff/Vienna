@@ -15,29 +15,16 @@ namespace Vienna {
 		private float healingMultiplier = 1f;
 		public List<HealthEffect> healthEffects = new List<HealthEffect>();
 
-		#region Displays
-		private Slider healthSlider;
-		#endregion
-
 		private Coroutine regenCoroutine;
-
-		private void Awake() {
-			healthSlider = GameObject.FindGameObjectWithTag("Health Bar").GetComponent<Slider>();
-
-			healthSlider.maxValue = maxHealth;
-		}
 
 		private void Start() {
 			regenCoroutine = StartCoroutine(RegenerateHealth(false));
 			StartCoroutine(ProcessEffects());
 		}
 
-		private void Update() {
-			healthSlider.value = health;
-		}
-
 		public void AddHealth(float health) {
 			this.health = Mathf.Min(this.health + health, maxHealth);
+			HealthBar.instance.UpdateHealthBar();
 		}
 
 		public void DealDamage(float damage) {
@@ -48,6 +35,8 @@ namespace Vienna {
 			if (health < 0) {
 				Debug.LogError("DEAD");
 			}
+
+			HealthBar.instance.UpdateHealthBar();
 		}
 
 		public void LoadData(LivingData data) {

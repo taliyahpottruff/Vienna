@@ -2223,12 +2223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d98514186b78741ae50b181bced74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  species: 0
-  firstName: Dude
-  lastName: Duderson
-  health: 100
-  maxHealth: 100
-  healingMultiplier: 1
 --- !u!50 &1130136422
 Rigidbody2D:
   serializedVersion: 4
@@ -12145,7 +12139,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -4376805549325076733, guid: a901c65861be54540a83be78e94eae15,
+  m_Sprite: {fileID: -7731453453889074051, guid: 6d95e92b0e5921d45986be734e297197,
     type: 3}
   m_Color: {r: 0.46226418, g: 0.2870511, b: 0, a: 1}
   m_FlipX: 0
@@ -13093,6 +13087,7 @@ MonoBehaviour:
   - {fileID: -5764430840068194110, guid: a901c65861be54540a83be78e94eae15, type: 3}
   - {fileID: 178769836825283924, guid: a901c65861be54540a83be78e94eae15, type: 3}
   - {fileID: 1073498840640036845, guid: a901c65861be54540a83be78e94eae15, type: 3}
+  hairType: ShortHair
   hairRenderer: {fileID: 1399046496}
 --- !u!1 &1978860650
 GameObject:

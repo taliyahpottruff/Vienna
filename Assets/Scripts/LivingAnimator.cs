@@ -6,7 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class LivingAnimator : MonoBehaviour {
 	public float animationSpeed = 0.1f;
-	public List<Sprite> upSprites, downSprites, sideSprites, hairDownSprites, hairUpSprites, hairSideSprites;
+	public List<Sprite> upSprites, downSprites, sideSprites;
+	public string hairType = "ShortHair";
 	public SpriteRenderer hairRenderer;
 	
 	private SpriteRenderer sr;
@@ -14,6 +15,7 @@ public class LivingAnimator : MonoBehaviour {
 
 	private Direction direction = Direction.Down;
 	private bool moving;
+	private Sprite[] hairSprites;
 
 	private void Awake() {
 		sr = GetComponent<SpriteRenderer>();
@@ -21,6 +23,7 @@ public class LivingAnimator : MonoBehaviour {
 	}
 
 	private void Start() {
+		LoadHairSprites();
 		StartCoroutine(Animate());
 	}
 
@@ -49,16 +52,9 @@ public class LivingAnimator : MonoBehaviour {
 		}
 	}
 
-	private List<Sprite> GetHairAnimation(Direction direction) {
-		switch (direction) {
-			case Direction.Down:
-				return hairDownSprites;
-			case Direction.Up:
-				return hairUpSprites;
-			default:
-				return hairSideSprites;
-		}
-	}
+	private void LoadHairSprites() {
+		hairSprites = Resources.LoadAll<Sprite>($"Sprites/Hair/{hairType}");
+    }
 
 	private IEnumerator Animate() {
 		int index = 0;
@@ -68,9 +64,10 @@ public class LivingAnimator : MonoBehaviour {
 			
 			//Set main sprite
 			sr.sprite = animation[index];
+			var animIndex = int.Parse(animation[index].name.Split('_')[1]);
 
 			//Set additional sprites
-			if (hairRenderer != null) hairRenderer.sprite = GetHairAnimation(direction)[index];
+			if (hairRenderer != null) hairRenderer.sprite = hairSprites[animIndex];
 
 			index++;
 			yield return new WaitForSeconds(animationSpeed);

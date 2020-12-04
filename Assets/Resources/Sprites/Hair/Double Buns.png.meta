@@ -1,0 +1,766 @@
+fileFormatVersion: 2
+guid: 29e9ab5dee9ea7441be2d293d0afb940
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1266113720772158694
+    second: DoubleBuns_0
+  - first:
+      213: 4930816560696564001
+    second: DoubleBuns_1
+  - first:
+      213: -4642387369778310741
+    second: DoubleBuns_2
+  - first:
+      213: -8013737542368972040
+    second: DoubleBuns_3
+  - first:
+      213: 6136902783911550681
+    second: DoubleBuns_4
+  - first:
+      213: -714475609626168146
+    second: DoubleBuns_5
+  - first:
+      213: 7891465793516288036
+    second: DoubleBuns_6
+  - first:
+      213: 7531373733744267470
+    second: DoubleBuns_7
+  - first:
+      213: -8722454024548143149
+    second: DoubleBuns_8
+  - first:
+      213: 1315918502109073573
+    second: DoubleBuns_9
+  - first:
+      213: -7686106089926969501
+    second: DoubleBuns_10
+  - first:
+      213: -7314138302080454975
+    second: DoubleBuns_11
+  - first:
+      213: 7094710419017820745
+    second: DoubleBuns_12
+  - first:
+      213: 2759851573692259892
+    second: DoubleBuns_13
+  - first:
+      213: -4818892090267643725
+    second: DoubleBuns_14
+  - first:
+      213: 1853045286432258658
+    second: DoubleBuns_15
+  - first:
+      213: 6129003852653495046
+    second: DoubleBuns_16
+  - first:
+      213: -5121062753409850943
+    second: DoubleBuns_17
+  - first:
+      213: -4432176404861760498
+    second: DoubleBuns_18
+  - first:
+      213: 8118280655756162817
+    second: DoubleBuns_19
+  - first:
+      213: 8166449925442745923
+    second: DoubleBuns_20
+  - first:
+      213: -8822804401504520085
+    second: DoubleBuns_21
+  - first:
+      213: -5392113316469145131
+    second: DoubleBuns_22
+  - first:
+      213: -8513027973438892859
+    second: DoubleBuns_23
+  - first:
+      213: 5335110314917990200
+    second: Double Buns_0
+  - first:
+      213: -5061898892639846666
+    second: Double Buns_1
+  - first:
+      213: 5966246955269942342
+    second: Double Buns_2
+  - first:
+      213: -6295350075500661046
+    second: Double Buns_3
+  - first:
+      213: -3179977956539421745
+    second: Double Buns_4
+  - first:
+      213: 392854314914626850
+    second: Double Buns_5
+  - first:
+      213: -638288208079732927
+    second: Double Buns_6
+  - first:
+      213: 6433484529198918959
+    second: Double Buns_7
+  - first:
+      213: 6615461635240971493
+    second: Double Buns_8
+  - first:
+      213: -3222262427750451623
+    second: Double Buns_9
+  - first:
+      213: -7448903228202843023
+    second: Double Buns_10
+  - first:
+      213: 6214887990047532220
+    second: Double Buns_11
+  - first:
+      213: -1033856654992624204
+    second: Double Buns_12
+  - first:
+      213: -956089550412767044
+    second: Double Buns_13
+  - first:
+      213: -5823311063675044318
+    second: Double Buns_14
+  - first:
+      213: -273095554408338659
+    second: Double Buns_15
+  - first:
+      213: -6379447357445377101
+    second: Double Buns_16
+  - first:
+      213: -3777702133502063251
+    second: Double Buns_17
+  - first:
+      213: -7994808786561210484
+    second: Double Buns_18
+  - first:
+      213: -5127728948478855079
+    second: Double Buns_19
+  - first:
+      213: 3363772959082246855
+    second: Double Buns_20
+  - first:
+      213: 999035504645254422
+    second: Double Buns_21
+  - first:
+      213: 2741896348569698442
+    second: Double Buns_22
+  - first:
+      213: 2108303221097110674
+    second: Double Buns_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Double Buns_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 197
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f8536909e1a0a40800000000000000
+      internalID: 5335110314917990200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 197
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe3247b6c580c9b0800000000000000
+      internalID: -5061898892639846666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 197
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64cee1bcefd5cc250800000000000000
+      internalID: 5966246955269942342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 169
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6fd05e57c62a8a0800000000000000
+      internalID: -6295350075500661046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_4
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 169
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb25e295e27ed3d0800000000000000
+      internalID: -3179977956539421745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_5
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 169
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d37f00be2b37500800000000000000
+      internalID: 392854314914626850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 141
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14f361da1485427f0800000000000000
+      internalID: -638288208079732927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_7
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 141
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d6fded714584950800000000000000
+      internalID: 6433484529198918959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_8
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 141
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec43c99e47decb50800000000000000
+      internalID: 6615461635240971493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 113
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956b8dce4693843d0800000000000000
+      internalID: -3222262427750451623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_10
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 113
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17485bcdafd20a890800000000000000
+      internalID: -7448903228202843023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_11
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 113
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb4ef95f2b7bf3650800000000000000
+      internalID: 6214887990047532220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 85
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5bd7299d007a1f0800000000000000
+      internalID: -1033856654992624204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_13
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 85
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb02f269e994bb2f0800000000000000
+      internalID: -956089550412767044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_14
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 85
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22efb09d0717f2fa0800000000000000
+      internalID: -5823311063675044318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 57
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ba0c94a05c53cf0800000000000000
+      internalID: -273095554408338659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_16
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 57
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3f92c9d66a777a0800000000000000
+      internalID: -6379447357445377101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_17
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 57
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6dcf59bce7e29bc0800000000000000
+      internalID: -3777702133502063251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 29
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87e8d554cbbc0190800000000000000
+      internalID: -7994808786561210484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_19
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 29
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9583e6170b5a6d8b0800000000000000
+      internalID: -5127728948478855079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_20
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 29
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2792b2fa58eae20800000000000000
+      internalID: 3363772959082246855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d22649f794ddd00800000000000000
+      internalID: 999035504645254422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_22
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a80007ba33c2d0620800000000000000
+      internalID: 2741896348569698442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Buns_23
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c1e4cfb92324d10800000000000000
+      internalID: 2108303221097110674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

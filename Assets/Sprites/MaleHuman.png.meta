@@ -167,6 +167,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -201,6 +202,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -231,76 +233,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MaleHuman_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 197
-        width: 14
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e703a2a864f0f1a10800000000000000
-      internalID: 1882239964904304766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MaleHuman_1
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 197
-        width: 14
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88d228c1d5546c470800000000000000
-      internalID: 8414489220000918920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MaleHuman_2
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 197
-        width: 10
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9953cc6c37c85c50800000000000000
-      internalID: 6654287511776614811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: MaleHuman_3
       rect:
         serializedVersion: 2
-        x: 2
-        y: 169
-        width: 12
-        height: 26
+        x: 0
+        y: 168
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,10 +257,10 @@ TextureImporter:
       name: MaleHuman_4
       rect:
         serializedVersion: 2
-        x: 20
-        y: 169
-        width: 12
-        height: 26
+        x: 18
+        y: 168
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,10 +278,10 @@ TextureImporter:
       name: MaleHuman_5
       rect:
         serializedVersion: 2
-        x: 37
-        y: 169
-        width: 12
-        height: 26
+        x: 36
+        y: 168
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,10 +299,10 @@ TextureImporter:
       name: MaleHuman_6
       rect:
         serializedVersion: 2
-        x: 2
-        y: 141
-        width: 12
-        height: 26
+        x: 0
+        y: 140
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,10 +320,10 @@ TextureImporter:
       name: MaleHuman_7
       rect:
         serializedVersion: 2
-        x: 20
-        y: 141
-        width: 12
-        height: 26
+        x: 18
+        y: 140
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -402,10 +341,10 @@ TextureImporter:
       name: MaleHuman_8
       rect:
         serializedVersion: 2
-        x: 35
-        y: 141
-        width: 16
-        height: 26
+        x: 36
+        y: 140
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,10 +362,10 @@ TextureImporter:
       name: MaleHuman_9
       rect:
         serializedVersion: 2
-        x: 2
-        y: 113
-        width: 12
-        height: 26
+        x: 0
+        y: 112
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -444,10 +383,10 @@ TextureImporter:
       name: MaleHuman_10
       rect:
         serializedVersion: 2
-        x: 20
-        y: 113
-        width: 12
-        height: 26
+        x: 18
+        y: 112
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -465,10 +404,10 @@ TextureImporter:
       name: MaleHuman_11
       rect:
         serializedVersion: 2
-        x: 37
-        y: 113
-        width: 12
-        height: 26
+        x: 36
+        y: 112
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -486,10 +425,10 @@ TextureImporter:
       name: MaleHuman_12
       rect:
         serializedVersion: 2
-        x: 1
-        y: 85
-        width: 14
-        height: 26
+        x: 0
+        y: 84
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -507,10 +446,10 @@ TextureImporter:
       name: MaleHuman_13
       rect:
         serializedVersion: 2
-        x: 19
-        y: 85
-        width: 14
-        height: 26
+        x: 18
+        y: 84
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -528,10 +467,10 @@ TextureImporter:
       name: MaleHuman_14
       rect:
         serializedVersion: 2
-        x: 38
-        y: 85
-        width: 10
-        height: 26
+        x: 36
+        y: 84
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -549,10 +488,10 @@ TextureImporter:
       name: MaleHuman_15
       rect:
         serializedVersion: 2
-        x: 2
-        y: 57
-        width: 12
-        height: 26
+        x: 0
+        y: 56
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -570,10 +509,10 @@ TextureImporter:
       name: MaleHuman_16
       rect:
         serializedVersion: 2
-        x: 20
-        y: 57
-        width: 12
-        height: 26
+        x: 18
+        y: 56
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -591,10 +530,10 @@ TextureImporter:
       name: MaleHuman_17
       rect:
         serializedVersion: 2
-        x: 38
-        y: 57
-        width: 11
-        height: 26
+        x: 36
+        y: 56
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -612,10 +551,10 @@ TextureImporter:
       name: MaleHuman_18
       rect:
         serializedVersion: 2
-        x: 2
-        y: 29
-        width: 12
-        height: 26
+        x: 0
+        y: 28
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -633,10 +572,10 @@ TextureImporter:
       name: MaleHuman_19
       rect:
         serializedVersion: 2
-        x: 20
-        y: 29
-        width: 12
-        height: 26
+        x: 18
+        y: 28
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -655,9 +594,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 36
-        y: 29
-        width: 14
-        height: 26
+        y: 28
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -675,10 +614,10 @@ TextureImporter:
       name: MaleHuman_21
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 12
-        height: 26
+        x: 0
+        y: 0
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -696,10 +635,10 @@ TextureImporter:
       name: MaleHuman_22
       rect:
         serializedVersion: 2
-        x: 20
-        y: 1
-        width: 12
-        height: 26
+        x: 18
+        y: 0
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -717,10 +656,10 @@ TextureImporter:
       name: MaleHuman_23
       rect:
         serializedVersion: 2
-        x: 37
-        y: 1
-        width: 12
-        height: 26
+        x: 36
+        y: 0
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -730,6 +669,69 @@ TextureImporter:
       bones: []
       spriteID: f123fd0b3f14de0a0800000000000000
       internalID: -6850746943260380641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MaleHuman_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 196
+        width: 18
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e703a2a864f0f1a10800000000000000
+      internalID: 1882239964904304766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MaleHuman_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 196
+        width: 18
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d228c1d5546c470800000000000000
+      internalID: 8414489220000918920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MaleHuman_2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 196
+        width: 18
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9953cc6c37c85c50800000000000000
+      internalID: 6654287511776614811
       vertices: []
       indices: 
       edges: []

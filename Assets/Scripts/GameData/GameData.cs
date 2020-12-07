@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Vienna.Data {
 	[Serializable]
@@ -21,6 +22,9 @@ namespace Vienna.Data {
 		#endregion
 
 		public static bool Save(Living player) {
+			if (current == null) {
+				Debug.Log("Wut");
+			}
 			current.player = new LivingData() {
 				position = player.transform.position,
 				species = player.species,
@@ -29,6 +33,15 @@ namespace Vienna.Data {
 				hairType = player.hairType,
 				topType = player.topType,
 				bottomType = player.bottomType,
+				hairColorR = player.animator.hairRenderer.color.r,
+				hairColorG = player.animator.hairRenderer.color.g,
+				hairColorB = player.animator.hairRenderer.color.b,
+				topColorR = player.animator.topRenderer.color.r,
+				topColorG = player.animator.topRenderer.color.g,
+				topColorB = player.animator.topRenderer.color.b,
+				bottomColorR = player.animator.bottomRenderer.color.r,
+				bottomColorG = player.animator.bottomRenderer.color.g,
+				bottomColorB = player.animator.bottomRenderer.color.b,
 				health = player.health,
 				maxHealth = player.maxHealth,
 				inventory = player.GetInventoryItems(),
@@ -58,5 +71,13 @@ namespace Vienna.Data {
 
 			return false;
 		}
+
+		public static void Clear() {
+			_current = new GameData();
+        }
+
+		public static void SetPlayerData(LivingData livingData) {
+			_current.player = livingData;
+        }
 	}
 }

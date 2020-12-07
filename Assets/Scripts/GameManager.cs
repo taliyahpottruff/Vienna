@@ -72,7 +72,7 @@ namespace Vienna {
 			if (player != null) camera.SetTarget(player.transform);
 		}
 
-		public void LoadGame() {
+		public void LoadGame(bool newGame = false) {
 			UIManager uiManager = FindObjectOfType<UIManager>();
 			if (uiManager != null) uiManager.SetPauseScreen(false);
 
@@ -88,7 +88,7 @@ namespace Vienna {
 			scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.GAME, LoadSceneMode.Additive));
 
 			//Start checking the loading progress
-			StartCoroutine(GetSceneLoadProgress());
+			StartCoroutine(GetSceneLoadProgress(newGame));
 		}
 
 		public void QuitGame() {
@@ -113,7 +113,7 @@ namespace Vienna {
 			return FindObjectsOfType<Storage>();
 		}
 
-		private IEnumerator GetSceneLoadProgress() {
+		private IEnumerator GetSceneLoadProgress(bool newGame = false) {
 			foreach (AsyncOperation op in scenesLoading) {
 				while (!op.isDone) {
 					totalSceneProgress = 0f;
@@ -132,31 +132,35 @@ namespace Vienna {
 			//Once loading is done
 			Living player = FindObjectOfType<Player>();
 			camera.SetTarget(player.transform);
-			if (GameData.Load()) {
-				Debug.Log("Load successful!");
-				player.LoadData(GameData.current.player);
+			if (!newGame) {
+				if (GameData.Load()) {
+					Debug.Log("Load successful!");
+					player.LoadData(GameData.current.player);
 
-				//Clear all entities
-				GameObject[] entityObjs = GameObject.FindGameObjectsWithTag("Entity");
-				foreach (GameObject obj in entityObjs) {
-					Destroy(obj);
+					//Clear all entities
+					GameObject[] entityObjs = GameObject.FindGameObjectsWithTag("Entity");
+					foreach (GameObject obj in entityObjs) {
+						Destroy(obj);
+					}
+
+					//Load entities from data
+					foreach (StorageData storage in GameData.current.storages) {
+						Debug.Log(storage.type);
+						GameObject storagePrefab = Resources.Load<GameObject>($"Prefabs/Storages/{storage.type.Replace("(Clone)", "")}");
+						GameObject obj = Instantiate<GameObject>(storagePrefab, storage.position, Quaternion.identity);
+						obj.name = storagePrefab.name;
+						Storage storageComponent = obj.GetComponent<Storage>();
+						Inventory inventory = (Inventory)storageComponent.Interact();
+						inventory.SetItems(new List<IBaseItem>(storage.items));
+					}
+
+					Paused = false;
+				} else {
+					Debug.LogError("Load failed! Starting a new game...");
 				}
-
-				//Load entities from data
-				foreach (StorageData storage in GameData.current.storages) {
-					Debug.Log(storage.type);
-					GameObject storagePrefab = Resources.Load<GameObject>($"Prefabs/Storages/{storage.type.Replace("(Clone)", "")}");
-					GameObject obj = Instantiate<GameObject>(storagePrefab, storage.position, Quaternion.identity);
-					obj.name = storagePrefab.name;
-					Storage storageComponent = obj.GetComponent<Storage>();
-					Inventory inventory = (Inventory)storageComponent.Interact();
-					inventory.SetItems(new List<IBaseItem>(storage.items));
-				}
-
-				Paused = false;
 			} else {
-				Debug.LogError("Load failed! Starting a new game...");
-			}
+				player.LoadData(GameData.current.player);
+            }
 
 			loadingScreen.gameObject.SetActive(false);
 		}

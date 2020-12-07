@@ -74,6 +74,150 @@ TextureImporter:
   - first:
       213: 1073498840640036845
     second: ShortHair_23
+  - first:
+      213: -7264301829086331493
+    second: Short Hair_0
+  - first:
+      213: -1653267798397232682
+    second: Short Hair_1
+  - first:
+      213: 9027152528186706271
+    second: Short Hair_2
+  - first:
+      213: -139907320822870474
+    second: Short Hair_3
+  - first:
+      213: 6196898084266782416
+    second: Short Hair_4
+  - first:
+      213: -2010297960582257310
+    second: Short Hair_5
+  - first:
+      213: -3402821116250460605
+    second: Short Hair_6
+  - first:
+      213: -2556994482722606567
+    second: Short Hair_7
+  - first:
+      213: -6898141679783818876
+    second: Short Hair_8
+  - first:
+      213: -6822602614103214530
+    second: Short Hair_9
+  - first:
+      213: -5782830803376377634
+    second: Short Hair_10
+  - first:
+      213: 7818775185911233594
+    second: Short Hair_11
+  - first:
+      213: 6719832418109827996
+    second: Short Hair_12
+  - first:
+      213: 7828029523184999113
+    second: Short Hair_13
+  - first:
+      213: -823757959915689819
+    second: Short Hair_14
+  - first:
+      213: 8239609561810138108
+    second: Short Hair_15
+  - first:
+      213: 8651385671915911166
+    second: Short Hair_16
+  - first:
+      213: -152156317046813100
+    second: Short Hair_17
+  - first:
+      213: 4232831808369640567
+    second: Short Hair_18
+  - first:
+      213: -5383977188274906913
+    second: Short Hair_19
+  - first:
+      213: -7047359311632859770
+    second: Short Hair_20
+  - first:
+      213: 4351819651801576296
+    second: Short Hair_21
+  - first:
+      213: -3866919140491585088
+    second: Short Hair_22
+  - first:
+      213: -4217591752263521779
+    second: Short Hair_23
+  - first:
+      213: -4615974398449182666
+    second: Short Hair_0
+  - first:
+      213: 6354649743328792256
+    second: Short Hair_1
+  - first:
+      213: -7259582701987256382
+    second: Short Hair_2
+  - first:
+      213: 508443668562888904
+    second: Short Hair_3
+  - first:
+      213: -6895729159880331416
+    second: Short Hair_4
+  - first:
+      213: 8673083429977285521
+    second: Short Hair_5
+  - first:
+      213: -3735674519393252860
+    second: Short Hair_6
+  - first:
+      213: 7346280150027553843
+    second: Short Hair_7
+  - first:
+      213: -489474004940161315
+    second: Short Hair_8
+  - first:
+      213: -4258391275146536562
+    second: Short Hair_9
+  - first:
+      213: -25137892527192571
+    second: Short Hair_10
+  - first:
+      213: 4006268524753083085
+    second: Short Hair_11
+  - first:
+      213: -2359192860135698080
+    second: Short Hair_12
+  - first:
+      213: -3275624978103966749
+    second: Short Hair_13
+  - first:
+      213: 5840405911627753430
+    second: Short Hair_14
+  - first:
+      213: 399100359877347215
+    second: Short Hair_15
+  - first:
+      213: -3648508000004824280
+    second: Short Hair_16
+  - first:
+      213: 5173498355752275456
+    second: Short Hair_17
+  - first:
+      213: 6419503725798132454
+    second: Short Hair_18
+  - first:
+      213: -3748000529762900045
+    second: Short Hair_19
+  - first:
+      213: 4307552882274075989
+    second: Short Hair_20
+  - first:
+      213: 560625348092461286
+    second: Short Hair_21
+  - first:
+      213: 3259687148081348418
+    second: Short Hair_22
+  - first:
+      213: -6590693782966752775
+    second: Short Hair_23
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -161,13 +305,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ShortHair_0
+      name: Short Hair_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 197
-        width: 14
-        height: 26
+        x: 0
+        y: 196
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +319,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 307358dca867243c0800000000000000
-      internalID: -4376805549325076733
+      spriteID: 6389328bdb3c0ffb0800000000000000
+      internalID: -4615974398449182666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_1
+      name: Short Hair_1
       rect:
         serializedVersion: 2
-        x: 19
-        y: 197
-        width: 14
-        height: 26
+        x: 18
+        y: 196
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +340,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58f99909ba7f9e8c0800000000000000
-      internalID: -3969369280312926331
+      spriteID: 0cec32fe540403850800000000000000
+      internalID: 6354649743328792256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_2
+      name: Short Hair_2
       rect:
         serializedVersion: 2
         x: 36
-        y: 197
-        width: 14
-        height: 26
+        y: 196
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,20 +361,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b041c4b4ae9fa2ca0800000000000000
-      internalID: -6040741165483158517
+      spriteID: 2c7aa76def7c04b90800000000000000
+      internalID: -7259582701987256382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_3
+      name: Short Hair_3
       rect:
         serializedVersion: 2
-        x: 1
-        y: 169
-        width: 14
-        height: 26
+        x: 0
+        y: 168
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,20 +382,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 301bb4fe939839d30800000000000000
-      internalID: 4437040939810926851
+      spriteID: 8c8ccfc92da5e0700800000000000000
+      internalID: 508443668562888904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_4
+      name: Short Hair_4
       rect:
         serializedVersion: 2
-        x: 19
-        y: 169
-        width: 14
-        height: 26
+        x: 18
+        y: 168
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,83 +403,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1674abea017e10a90800000000000000
-      internalID: -7349339058055002271
+      spriteID: 86fa70e3dd27d40a0800000000000000
+      internalID: -6895729159880331416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_5
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 169
-        width: 14
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b8d3dc45122b4600800000000000000
-      internalID: 453493662359476404
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShortHair_6
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 141
-        width: 14
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb1fb5b852ab40aa0800000000000000
-      internalID: -6195622516940344898
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShortHair_7
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 141
-        width: 14
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2702018bfcb7bfd60800000000000000
-      internalID: 7925064101365031026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShortHair_8
+      name: Short Hair_5
       rect:
         serializedVersion: 2
         x: 36
-        y: 141
-        width: 14
-        height: 26
+        y: 168
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,20 +424,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3af45122fe1df750800000000000000
-      internalID: 6340257875697662525
+      spriteID: 1936f177d6bfc5870800000000000000
+      internalID: 8673083429977285521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_9
+      name: Short Hair_6
       rect:
         serializedVersion: 2
-        x: 1
-        y: 113
-        width: 14
-        height: 26
+        x: 0
+        y: 140
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,20 +445,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 514a399050fbed730800000000000000
-      internalID: 4025865145272214549
+      spriteID: 40a461b21d7382cc0800000000000000
+      internalID: -3735674519393252860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_10
+      name: Short Hair_7
       rect:
         serializedVersion: 2
-        x: 19
-        y: 113
-        width: 14
-        height: 26
+        x: 18
+        y: 140
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,83 +466,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97548e1ba1d9eeed0800000000000000
-      internalID: -2382794414852913799
+      spriteID: 33c45eacfda33f560800000000000000
+      internalID: 7346280150027553843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_11
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 113
-        width: 14
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ec51c1786ac55230800000000000000
-      internalID: 3627027624850709732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShortHair_12
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 85
-        width: 14
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c956ab6f1d6f49b00800000000000000
-      internalID: 834563212618392988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShortHair_13
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 85
-        width: 14
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b152913b6cd7abcc0800000000000000
-      internalID: -3694502251942304485
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShortHair_14
+      name: Short Hair_8
       rect:
         serializedVersion: 2
         x: 36
-        y: 85
-        width: 14
-        height: 26
+        y: 140
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -469,20 +487,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22016fcfb8a211ee0800000000000000
-      internalID: -1292204837345816542
+      spriteID: ddef0c06cf90539f0800000000000000
+      internalID: -489474004940161315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_15
+      name: Short Hair_9
       rect:
         serializedVersion: 2
-        x: 1
-        y: 57
-        width: 14
-        height: 26
+        x: 0
+        y: 112
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -490,20 +508,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51acd67e6a05e3650800000000000000
-      internalID: 6214493213595388437
+      spriteID: e89944a72b727e4c0800000000000000
+      internalID: -4258391275146536562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_16
+      name: Short Hair_10
       rect:
         serializedVersion: 2
-        x: 19
-        y: 57
-        width: 14
-        height: 26
+        x: 18
+        y: 112
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -511,83 +529,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd78912574ae7fc60800000000000000
-      internalID: 7852002067384731615
+      spriteID: 506c38d4831b6aff0800000000000000
+      internalID: -25137892527192571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_17
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 57
-        width: 14
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c0cd6531b0a000b0800000000000000
-      internalID: -5764430840068194110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShortHair_18
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 29
-        width: 14
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 31ddd22cc3a4023a0800000000000000
-      internalID: -6692267421456278253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShortHair_19
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 29
-        width: 14
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42695530e80032970800000000000000
-      internalID: 8728821112715449892
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShortHair_20
+      name: Short Hair_11
       rect:
         serializedVersion: 2
         x: 36
-        y: 29
-        width: 14
-        height: 26
+        y: 112
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -595,20 +550,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45d868c283e1b7200800000000000000
-      internalID: 178769836825283924
+      spriteID: dca5cb44fff199730800000000000000
+      internalID: 4006268524753083085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_21
+      name: Short Hair_12
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 14
-        height: 26
+        x: 0
+        y: 84
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -616,20 +571,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8939e3d2090164e40800000000000000
-      internalID: 5640213794748535704
+      spriteID: 06159fed796724fd0800000000000000
+      internalID: -2359192860135698080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_22
+      name: Short Hair_13
       rect:
         serializedVersion: 2
-        x: 19
-        y: 1
-        width: 14
-        height: 26
+        x: 18
+        y: 84
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -637,20 +592,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df1c11c2d2922c3a0800000000000000
-      internalID: -6646704826055802371
+      spriteID: 3e367baff64aa82d0800000000000000
+      internalID: -3275624978103966749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortHair_23
+      name: Short Hair_14
       rect:
         serializedVersion: 2
         x: 36
-        y: 1
-        width: 14
-        height: 26
+        y: 84
+        width: 18
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -658,8 +613,197 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: def94270285d5ee00800000000000000
-      internalID: 1073498840640036845
+      spriteID: 6d7e9aa9b3a4d0150800000000000000
+      internalID: 5840405911627753430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Short Hair_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 56
+        width: 18
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87483ca9a3e98500800000000000000
+      internalID: 399100359877347215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Short Hair_16
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 56
+        width: 18
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823aa8bfd45ed5dc0800000000000000
+      internalID: -3648508000004824280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Short Hair_17
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 56
+        width: 18
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e8eac1855fbc740800000000000000
+      internalID: 5173498355752275456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Short Hair_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 28
+        width: 18
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea8e7a60a8a61950800000000000000
+      internalID: 6419503725798132454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Short Hair_19
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 28
+        width: 18
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7a18d306d6cfbc0800000000000000
+      internalID: -3748000529762900045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Short Hair_20
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 28
+        width: 18
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5550827268087cb30800000000000000
+      internalID: 4307552882274075989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Short Hair_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 18
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e08125a8cdb7c700800000000000000
+      internalID: 560625348092461286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Short Hair_22
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 18
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f7b4cc03cbc3d20800000000000000
+      internalID: 3259687148081348418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Short Hair_23
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 18
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f924e26ce62984a0800000000000000
+      internalID: -6590693782966752775
       vertices: []
       indices: 
       edges: []

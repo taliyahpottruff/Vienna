@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,13 +22,11 @@ namespace Vienna {
         private Coroutine regenCoroutine;
         private int effectLength = 0;
 
-        private LivingAnimator animator;
-
-        private void Awake() {
-            animator = GetComponent<LivingAnimator>();
-        }
+        public LivingAnimator animator;
 
         private void Start() {
+            animator = GetComponent<LivingAnimator>();
+
             regenCoroutine = StartCoroutine(RegenerateHealth(false));
             StartCoroutine(ProcessEffects());
         }
@@ -56,6 +55,9 @@ namespace Vienna {
             hairType = data.hairType;
             topType = data.topType;
             bottomType = data.bottomType;
+            animator.hairRenderer.color = new Color(data.hairColorR, data.hairColorG, data.hairColorB);
+            animator.topRenderer.color = new Color(data.topColorR, data.topColorG, data.topColorB);
+            animator.bottomRenderer.color = new Color(data.bottomColorR, data.bottomColorG, data.bottomColorB);
             healthEffects = (data.healthEffects != null) ? data.healthEffects : new List<HealthEffect>();
             Inventory inventory = GetComponent<Inventory>();
             if (inventory != null) inventory.SetItems(data.inventory);

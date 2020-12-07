@@ -59,6 +59,7 @@ namespace Vienna {
 			float startTime = Time.time;
 			float duration = 0.1f;
 			float elapsed = 0f;
+			Debug.Log($"{currentSize.y}, {targetHeight}");
 
 			while (elapsed < duration) {
 				elapsed = Time.time - startTime;

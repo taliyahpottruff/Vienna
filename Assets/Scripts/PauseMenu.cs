@@ -27,6 +27,7 @@ namespace Vienna {
 		}
 
 		public void QuitToMenu() {
+			Time.timeScale = 1;
 			GameManager.singleton.GameToMenu();
 		}
 	}

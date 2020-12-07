@@ -7,10 +7,12 @@ using Vienna.Items;
 
 namespace Vienna {
     [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(LivingAnimator))]
     public abstract class Living : MonoBehaviour {
         public Species species = Species.Human;
         public string firstName;
         public string lastName;
+        public string hairType = "Short Hair", topType = "T-Shirt", bottomType = "Pants";
         public float health, maxHealth;
         private float healingMultiplier = 1f;
         private float healthMultiplier = 1f;
@@ -18,6 +20,12 @@ namespace Vienna {
 
         private Coroutine regenCoroutine;
         private int effectLength = 0;
+
+        private LivingAnimator animator;
+
+        private void Awake() {
+            animator = GetComponent<LivingAnimator>();
+        }
 
         private void Start() {
             regenCoroutine = StartCoroutine(RegenerateHealth(false));
@@ -39,18 +47,25 @@ namespace Vienna {
         }
 
         public virtual void LoadData(LivingData data) {
-            //First, set the data
+            // First, set the data
             species = data.species;
             firstName = data.firstName;
             lastName = data.lastName;
             health = data.health;
             maxHealth = data.maxHealth;
+            hairType = data.hairType;
+            topType = data.topType;
+            bottomType = data.bottomType;
             healthEffects = (data.healthEffects != null) ? data.healthEffects : new List<HealthEffect>();
             Inventory inventory = GetComponent<Inventory>();
             if (inventory != null) inventory.SetItems(data.inventory);
 
-            //Then set other stuff
+            // Then set other stuff
             transform.position = data.position;
+
+            // Load spirte
+            animator = GetComponent<LivingAnimator>();
+            animator.LoadSprites();
         }
 
         public List<IBaseItem> GetInventoryItems() {

@@ -9,6 +9,7 @@ namespace Vienna.Data {
 		public Species species;
 		public string firstName;
 		public string lastName;
+		public string hairType, topType, bottomType;
 		public Vector2 position;
 		public float health;
 		public float maxHealth;

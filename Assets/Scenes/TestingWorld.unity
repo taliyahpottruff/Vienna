@@ -13071,8 +13071,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   species: 0
-  firstName: Player
-  lastName: Smith
+  firstName: Rob
+  lastName: Boss
+  hairType: Afro
+  topType: T-Shirt
+  bottomType: Pants
   health: 50
   maxHealth: 100
   healthEffects: []
@@ -13144,9 +13147,6 @@ MonoBehaviour:
   - {fileID: 9037883790824127789, guid: 83666983366b97943a965ec22e8701cc, type: 3}
   - {fileID: 1245113308397461329, guid: 83666983366b97943a965ec22e8701cc, type: 3}
   - {fileID: 3699309554192254100, guid: 83666983366b97943a965ec22e8701cc, type: 3}
-  hairType: Double Buns
-  topType: T-Shirt
-  bottomType: Skirt
   hairRenderer: {fileID: 1399046496}
   topRenderer: {fileID: 559232275}
   bottomRenderer: {fileID: 2089702446}

@@ -5,14 +5,15 @@ using UnityEngine;
 namespace Vienna {
 	[RequireComponent(typeof(SpriteRenderer))]
 	[RequireComponent(typeof(Rigidbody2D))]
+	[RequireComponent(typeof(Living))]
 	public class LivingAnimator : MonoBehaviour {
 		public float animationSpeed = 0.1f;
 		public List<Sprite> upSprites, downSprites, sideSprites;
-		public string hairType = "ShortHair", topType = "T-Shirt", bottomType = "Pants";
 		public SpriteRenderer hairRenderer, topRenderer, bottomRenderer;
 
 		private SpriteRenderer sr;
 		private Rigidbody2D rb;
+		private Living living;
 
 		private Direction direction = Direction.Down;
 		private bool moving;
@@ -21,6 +22,7 @@ namespace Vienna {
 		private void Awake() {
 			sr = GetComponent<SpriteRenderer>();
 			rb = GetComponent<Rigidbody2D>();
+			living = GetComponent<Living>();
 		}
 
 		private void Start() {
@@ -54,22 +56,22 @@ namespace Vienna {
 		}
 
         #region Load Sprites
-		private void LoadSprites() {
+		public void LoadSprites() {
 			LoadHairSprites();
 			LoadTopSprites();
 			LoadBottomSprites();
         }
 
-        private void LoadHairSprites() {
-			hairSprites = Resources.LoadAll<Sprite>($"Sprites/Hair/{hairType}");
+        public void LoadHairSprites() {
+			hairSprites = Resources.LoadAll<Sprite>($"Sprites/Hair/{living.hairType}");
 		}
 
-		private void LoadTopSprites() {
-			topSprites = Resources.LoadAll<Sprite>($"Sprites/Tops/{topType}");
+		public void LoadTopSprites() {
+			topSprites = Resources.LoadAll<Sprite>($"Sprites/Tops/{living.topType}");
         }
 
-		private void LoadBottomSprites() {
-			bottomSprites = Resources.LoadAll<Sprite>($"Sprites/Bottoms/{bottomType}");
+		public void LoadBottomSprites() {
+			bottomSprites = Resources.LoadAll<Sprite>($"Sprites/Bottoms/{living.bottomType}");
         }
         #endregion
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -92,8 +93,12 @@ namespace Vienna {
 		}
 
 		public void QuitGame() {
-			Debug.Log("Quitting game with Code 0");
-			Application.Quit(0);
+			if (Application.isEditor) {
+				EditorApplication.isPlaying = false;
+			} else {
+				Debug.Log("Quitting game with Code 0");
+				Application.Quit(0);
+			}
 		}
 
 		public void GameToMenu() {

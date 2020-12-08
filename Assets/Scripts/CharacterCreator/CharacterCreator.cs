@@ -7,8 +7,10 @@ using Vienna.Data;
 namespace Vienna.CharacterCreator {
     public class CharacterCreator : MonoBehaviour {
         public Image hair, top, bottom;
-
         public string hairType, topType, bottomType;
+        public Button startButton;
+
+        private string firstNameInput = "", lastNameInput = "";
 
         public static CharacterCreator instance;
 
@@ -50,6 +52,20 @@ namespace Vienna.CharacterCreator {
 
         public void SetBottomType(string type) {
             bottomType = type;
+        }
+
+        public void ValidateFirstName(string value) {
+            firstNameInput = value;
+            ValidateInputs();
+        }
+
+        public void ValidateLastName(string value) {
+            lastNameInput = value;
+            ValidateInputs();
+        }
+
+        private void ValidateInputs() {
+            startButton.interactable = (!firstNameInput.Equals("") && !lastNameInput.Equals(""));
         }
     }
 }

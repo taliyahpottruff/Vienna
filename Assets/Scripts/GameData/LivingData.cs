@@ -10,6 +10,7 @@ namespace Vienna.Data {
 		public string firstName;
 		public string lastName;
 		public string hairType, topType, bottomType;
+		public float skinColorR, skinColorG, skinColorB;
 		public float hairColorR, hairColorG, hairColorB;
 		public float topColorR, topColorG, topColorB;
 		public float bottomColorR, bottomColorG, bottomColorB;

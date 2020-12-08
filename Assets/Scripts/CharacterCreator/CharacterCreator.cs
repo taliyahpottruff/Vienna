@@ -6,7 +6,7 @@ using Vienna.Data;
 
 namespace Vienna.CharacterCreator {
     public class CharacterCreator : MonoBehaviour {
-        public Image hair, top, bottom;
+        public Image body, hair, top, bottom;
         public string hairType, topType, bottomType;
         public Button startButton;
 
@@ -21,11 +21,14 @@ namespace Vienna.CharacterCreator {
         public void StartGame() {
             GameData.Clear();
             GameData.SetPlayerData(new LivingData() {
-                firstName = "Player",
-                lastName = "Lastname",
+                firstName = firstNameInput,
+                lastName = lastNameInput,
                 hairType = hairType,
                 topType = topType,
                 bottomType = bottomType,
+                skinColorR = body.color.r,
+                skinColorG = body.color.g,
+                skinColorB = body.color.b,
                 hairColorR = hair.color.r,
                 hairColorG = hair.color.g,
                 hairColorB = hair.color.b,

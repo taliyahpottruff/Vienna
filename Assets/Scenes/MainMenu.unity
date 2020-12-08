@@ -3408,6 +3408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd13f272039e1e74c9c6396d7e316d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 894060545}
   hair: {fileID: 673438310}
   top: {fileID: 1310320241}
   bottom: {fileID: 653253707}

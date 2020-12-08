@@ -22,6 +22,7 @@ namespace Vienna.Data {
 		#endregion
 
 		public static bool Save(Living player) {
+			var playerSR = player.GetComponent<SpriteRenderer>();
 			current.player = new LivingData() {
 				position = player.transform.position,
 				species = player.species,
@@ -30,6 +31,9 @@ namespace Vienna.Data {
 				hairType = player.hairType,
 				topType = player.topType,
 				bottomType = player.bottomType,
+				skinColorR = playerSR.color.r,
+				skinColorG = playerSR.color.g,
+				skinColorB = playerSR.color.b,
 				hairColorR = player.animator.hairRenderer.color.r,
 				hairColorG = player.animator.hairRenderer.color.g,
 				hairColorB = player.animator.hairRenderer.color.b,

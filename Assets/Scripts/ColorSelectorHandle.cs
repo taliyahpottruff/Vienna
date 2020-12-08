@@ -1,14 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Vienna {
+namespace Vienna.CharacterCreator {
     public class ColorSelectorHandle : Selectable {
+        public CreatorComponent component;
+
         bool dragging = false;
         Vector2 mousePosition = Vector2.zero;
-        
+
+        [SerializeField]
+        RectTransform parent;
         Controls controls;
 
         protected override void Start() {
@@ -19,7 +21,11 @@ namespace Vienna {
 
         private void Update() {
             if (dragging) {
-                this.transform.position = mousePosition;
+                Rect clampRect = Utils.GetWorldRect(parent, Vector2.one);
+                Vector2 clampedPoint = Utils.ClampToRect(mousePosition, clampRect);
+                Vector2 normalizedPoint = new Vector2((clampedPoint.x - clampRect.x) / clampRect.width, (clampedPoint.y - clampRect.y) / clampRect.height);
+                this.transform.position = clampedPoint;
+                component.componentImage.color = Color.HSVToRGB(normalizedPoint.x, normalizedPoint.y, 1);
             }
         }
 

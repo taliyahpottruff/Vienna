@@ -161,6 +161,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pointer Position"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""0f273f1f-c55f-473e-8201-12b9741fbf07"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -218,6 +226,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Dev Console"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c736985d-82d5-4671-963a-915d0c60b826"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pointer Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -257,6 +276,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_UI_Inventory = m_UI.FindAction("Inventory", throwIfNotFound: true);
         m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
         m_UI_DevConsole = m_UI.FindAction("Dev Console", throwIfNotFound: true);
+        m_UI_PointerPosition = m_UI.FindAction("Pointer Position", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -351,6 +371,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_UI_Inventory;
     private readonly InputAction m_UI_Submit;
     private readonly InputAction m_UI_DevConsole;
+    private readonly InputAction m_UI_PointerPosition;
     public struct UIActions
     {
         private @Controls m_Wrapper;
@@ -359,6 +380,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Inventory => m_Wrapper.m_UI_Inventory;
         public InputAction @Submit => m_Wrapper.m_UI_Submit;
         public InputAction @DevConsole => m_Wrapper.m_UI_DevConsole;
+        public InputAction @PointerPosition => m_Wrapper.m_UI_PointerPosition;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -380,6 +402,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @DevConsole.started -= m_Wrapper.m_UIActionsCallbackInterface.OnDevConsole;
                 @DevConsole.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnDevConsole;
                 @DevConsole.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnDevConsole;
+                @PointerPosition.started -= m_Wrapper.m_UIActionsCallbackInterface.OnPointerPosition;
+                @PointerPosition.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnPointerPosition;
+                @PointerPosition.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnPointerPosition;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -396,6 +421,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @DevConsole.started += instance.OnDevConsole;
                 @DevConsole.performed += instance.OnDevConsole;
                 @DevConsole.canceled += instance.OnDevConsole;
+                @PointerPosition.started += instance.OnPointerPosition;
+                @PointerPosition.performed += instance.OnPointerPosition;
+                @PointerPosition.canceled += instance.OnPointerPosition;
             }
         }
     }
@@ -429,5 +457,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnInventory(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
         void OnDevConsole(InputAction.CallbackContext context);
+        void OnPointerPosition(InputAction.CallbackContext context);
     }
 }

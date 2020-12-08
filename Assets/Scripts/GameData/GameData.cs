@@ -22,9 +22,6 @@ namespace Vienna.Data {
 		#endregion
 
 		public static bool Save(Living player) {
-			if (current == null) {
-				Debug.Log("Wut");
-			}
 			current.player = new LivingData() {
 				position = player.transform.position,
 				species = player.species,

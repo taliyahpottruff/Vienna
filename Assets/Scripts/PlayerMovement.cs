@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 
-/*
- * AUTHOR: Trenton Pottruff
- */
-
+/// AUTHOR: Trenton Pottruff
 namespace Vienna {
 	[RequireComponent(typeof(Rigidbody2D))]
 	[RequireComponent(typeof(Player))]

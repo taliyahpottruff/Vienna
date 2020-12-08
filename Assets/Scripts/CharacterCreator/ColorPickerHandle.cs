@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Vienna.CharacterCreator {
-    public class ColorSelectorHandle : Selectable {
+    public class ColorPickerHandle : Selectable {
         public CreatorComponent component;
         public Slider brightnessSlider;
 

@@ -23,5 +23,9 @@ namespace Vienna.CharacterCreator {
 
             background.texture = texture;
         }
+
+        public void Value(float value) {
+            Debug.Log(value);
+        }
     }
 }

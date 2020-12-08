@@ -5,6 +5,7 @@ using UnityEngine.UI;
 namespace Vienna.CharacterCreator {
     public class ColorSelectorHandle : Selectable {
         public CreatorComponent component;
+        public Slider brightnessSlider;
 
         bool dragging = false;
         Vector2 mousePosition = Vector2.zero;
@@ -25,8 +26,14 @@ namespace Vienna.CharacterCreator {
                 Vector2 clampedPoint = Utils.ClampToRect(mousePosition, clampRect);
                 Vector2 normalizedPoint = new Vector2((clampedPoint.x - clampRect.x) / clampRect.width, (clampedPoint.y - clampRect.y) / clampRect.height);
                 this.transform.position = clampedPoint;
-                component.componentImage.color = Color.HSVToRGB(normalizedPoint.x, normalizedPoint.y, 1);
+                component.componentImage.color = Color.HSVToRGB(normalizedPoint.x, normalizedPoint.y, brightnessSlider.value);
             }
+        }
+
+        public void UpdateBrightness(float _v) {
+            float h, s, v;
+            Color.RGBToHSV(component.componentImage.color, out h, out s, out v);
+            component.componentImage.color = Color.HSVToRGB(h, s, _v);
         }
 
         private void PointerPosition_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {

@@ -13123,6 +13123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1965061587}
   - component: {fileID: 1965061586}
+  - component: {fileID: 1965061593}
   - component: {fileID: 1965061584}
   - component: {fileID: 1965061589}
   - component: {fileID: 1965061588}
@@ -13351,6 +13352,17 @@ MonoBehaviour:
   coreRenderer: {fileID: 1938498333}
   headRenderer: {fileID: 118394128}
   currentCoreState: 
+--- !u!210 &1965061593
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965061583}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1978860650
 GameObject:
   m_ObjectHideFlags: 0

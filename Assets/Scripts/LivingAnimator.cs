@@ -9,7 +9,7 @@ namespace Vienna {
 	public class LivingAnimator : MonoBehaviour {
 		public float animationSpeed = 0.1f;
 		public List<Sprite> upSprites, downSprites, sideSprites;
-		public SpriteRenderer hairRenderer, topRenderer, bottomRenderer;
+		public SpriteRenderer hairRenderer, topRenderer, bottomRenderer, coreRenderer, headRenderer;
 
 		private SpriteRenderer sr;
 		private Rigidbody2D rb;
@@ -17,7 +17,7 @@ namespace Vienna {
 
 		private Direction direction = Direction.Down;
 		private bool moving;
-		private Sprite[] hairSprites, topSprites, bottomSprites;
+		private Sprite[] hairSprites, topSprites, bottomSprites, coreSprites, headSprites;
 
 		private void Awake() {
 			sr = GetComponent<SpriteRenderer>();
@@ -60,6 +60,8 @@ namespace Vienna {
 			LoadHairSprites();
 			LoadTopSprites();
 			LoadBottomSprites();
+			LoadCoreSprites();
+			LoadHeadSprites();
         }
 
         public void LoadHairSprites() {
@@ -73,9 +75,17 @@ namespace Vienna {
 		public void LoadBottomSprites() {
 			bottomSprites = Resources.LoadAll<Sprite>($"Sprites/Bottoms/{living.bottomType}");
         }
-        #endregion
 
-        private IEnumerator Animate() {
+		public void LoadCoreSprites() {
+			coreSprites = Resources.LoadAll<Sprite>("Sprites/Core");
+        }
+
+		public void LoadHeadSprites() {
+			headSprites = Resources.LoadAll<Sprite>("Sprites/Head");
+		}
+		#endregion
+
+		private IEnumerator Animate() {
 			int index = 0;
 			while (true) {
 				List<Sprite> animation = GetAnimation(direction);
@@ -89,6 +99,8 @@ namespace Vienna {
 				if (hairRenderer != null) hairRenderer.sprite = Utils.GetSpriteFromArray(animIndex, hairSprites, true);
 				if (topRenderer != null) topRenderer.sprite = Utils.GetSpriteFromArray(animIndex, topSprites, true);
 				if (bottomRenderer != null) bottomRenderer.sprite = Utils.GetSpriteFromArray(animIndex, bottomSprites, true);
+				if (coreRenderer != null) coreRenderer.sprite = Utils.GetSpriteFromArray(animIndex, coreSprites, true);
+				if (headRenderer != null) headRenderer.sprite = Utils.GetSpriteFromArray(animIndex, headSprites, true);
 
 				index++;
 				yield return new WaitForSeconds(animationSpeed);

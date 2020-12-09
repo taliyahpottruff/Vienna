@@ -146,6 +146,15 @@ TextureImporter:
   - first:
       213: -3752574708949090046
     second: Plaid Shirt_23
+  - first:
+      213: 6430538225724706138
+    second: Plaid Shirt_24
+  - first:
+      213: 4420523819755261183
+    second: Plaid Shirt_25
+  - first:
+      213: -2471302280784726587
+    second: Plaid Shirt_26
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -744,6 +753,69 @@ TextureImporter:
       bones: []
       spriteID: 20189f72f2d2cebc0800000000000000
       internalID: -3752574708949090046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plaid Shirt_24
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 196
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d44e2227cdd3950800000000000000
+      internalID: 6430538225724706138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plaid Shirt_25
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 168
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc4aad3efad85d30800000000000000
+      internalID: 4420523819755261183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plaid Shirt_26
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 140
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c5b63d4bab24bdd0800000000000000
+      internalID: -2471302280784726587
       vertices: []
       indices: 
       edges: []

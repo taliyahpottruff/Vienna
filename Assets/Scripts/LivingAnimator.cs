@@ -15,11 +15,21 @@ namespace Vienna {
 		private Rigidbody2D rb;
 		private Living living;
 
+		private bool calculateDirection = true;
 		private Direction direction = Direction.Down;
 		private bool moving;
 		private Sprite[] hairSprites, topSprites, bottomSprites, coreSprites, headSprites;
 
-		private void Awake() {
+		#region State Definitions
+		private Dictionary<string, int[]> animationStates = new Dictionary<string, int[]>() {
+			{"Aim_Down", new int[] { 24 } },
+			{"Aim_Up", new int[] { 25 } },
+			{"Aim_Side", new int[] { 26 } }
+		};
+		public string currentCoreState = "";
+        #endregion
+
+        private void Awake() {
 			sr = GetComponent<SpriteRenderer>();
 			rb = GetComponent<Rigidbody2D>();
 			living = GetComponent<Living>();
@@ -33,16 +43,24 @@ namespace Vienna {
 		private void Update() {
 			Vector2 movementVector = rb.velocity.normalized;
 			moving = !movementVector.Equals(Vector2.zero);
-			if (moving) { //First check if movement is even happening
+			if (moving && calculateDirection) { //First check if movement is even happening
 				direction = DirectionUtility.VectorToDirection(movementVector);
+			}
 
-				if (direction == Direction.Left) {
-					transform.localScale = new Vector3(-1, 1, 1);
-				} else {
-					transform.localScale = new Vector3(1, 1, 1);
-				}
+			if (direction == Direction.Left) {
+				transform.localScale = new Vector3(-1, 1, 1);
+			} else {
+				transform.localScale = new Vector3(1, 1, 1);
 			}
 		}
+
+		public void SetDirection(bool allowCalculation, Direction direction = Direction.Down) {
+			if (!allowCalculation) {
+				this.direction = direction;
+            }
+
+			calculateDirection = allowCalculation;
+        }
 
 		private List<Sprite> GetAnimation(Direction direction) {
 			switch (direction) {
@@ -86,23 +104,37 @@ namespace Vienna {
 		#endregion
 
 		private IEnumerator Animate() {
-			int index = 0;
+			int index = 0, coreIndex = 0;
 			while (true) {
 				List<Sprite> animation = GetAnimation(direction);
 				if (index >= animation.Count || !moving) index = 0;
 
-				//Set main sprite
+				// Set main sprite
 				sr.sprite = animation[index];
 				var animIndex = int.Parse(animation[index].name.Split('_')[1]);
 
-				//Set additional sprites
+				// Set additional sprites
 				if (hairRenderer != null) hairRenderer.sprite = Utils.GetSpriteFromArray(animIndex, hairSprites, true);
-				if (topRenderer != null) topRenderer.sprite = Utils.GetSpriteFromArray(animIndex, topSprites, true);
 				if (bottomRenderer != null) bottomRenderer.sprite = Utils.GetSpriteFromArray(animIndex, bottomSprites, true);
-				if (coreRenderer != null) coreRenderer.sprite = Utils.GetSpriteFromArray(animIndex, coreSprites, true);
 				if (headRenderer != null) headRenderer.sprite = Utils.GetSpriteFromArray(animIndex, headSprites, true);
 
+				// Render upper body state
+				if (animationStates.ContainsKey(currentCoreState)) {
+					var state = animationStates[currentCoreState];
+					if (coreIndex >= state.Length) coreIndex = 0;
+
+					var spriteIndex = state[coreIndex];
+
+					// Render
+					if (coreRenderer != null) coreRenderer.sprite = Utils.GetSpriteFromArray(spriteIndex, coreSprites);
+					if (topRenderer != null) topRenderer.sprite = Utils.GetSpriteFromArray(spriteIndex, topSprites);
+				} else {
+					if (coreRenderer != null) coreRenderer.sprite = Utils.GetSpriteFromArray(animIndex, coreSprites, true);
+					if (topRenderer != null) topRenderer.sprite = Utils.GetSpriteFromArray(animIndex, topSprites, true);
+				}
+
 				index++;
+				coreIndex++;
 				yield return new WaitForSeconds(animationSpeed);
 			}
 		}

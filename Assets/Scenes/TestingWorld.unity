@@ -269,7 +269,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: -5156993582514690110, guid: d8c33b2e36b30c94280e825fa5716a84,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1468,7 +1468,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 0.7049812, b: 0.69411767, a: 1}
   m_FlipX: 0
@@ -12304,7 +12304,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: -7731453453889074051, guid: 6d95e92b0e5921d45986be734e297197,
     type: 3}
   m_Color: {r: 0.46226418, g: 0.2870511, b: 0, a: 1}
@@ -12983,7 +12983,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1170115753450382605, guid: b6488793e896ad6489e32d8f4bd4242d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -13124,8 +13124,9 @@ GameObject:
   - component: {fileID: 1965061587}
   - component: {fileID: 1965061586}
   - component: {fileID: 1965061584}
-  - component: {fileID: 1965061588}
   - component: {fileID: 1965061589}
+  - component: {fileID: 1965061588}
+  - component: {fileID: 1965061585}
   - component: {fileID: 1965061590}
   - component: {fileID: 1965061591}
   - component: {fileID: 1965061592}
@@ -13157,6 +13158,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1965061585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965061583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573b469354cbec24aae62b2454189724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aiming: 0
 --- !u!212 &1965061586
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13256,7 +13270,7 @@ MonoBehaviour:
   species: 0
   firstName: Rob
   lastName: Boss
-  hairType: Afro
+  hairType: Short Hair
   topType: T-Shirt
   bottomType: Pants
   health: 50
@@ -13336,6 +13350,7 @@ MonoBehaviour:
   bottomRenderer: {fileID: 2089702446}
   coreRenderer: {fileID: 1938498333}
   headRenderer: {fileID: 118394128}
+  currentCoreState: 
 --- !u!1 &1978860650
 GameObject:
   m_ObjectHideFlags: 0
@@ -13960,7 +13975,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 0.2783019, g: 0.47485813, b: 1, a: 1}
   m_FlipX: 0

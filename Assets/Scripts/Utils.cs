@@ -34,5 +34,16 @@ namespace Vienna {
                 Mathf.Clamp(point.y, clamp.y, clamp.y + clamp.height)
             );
         }
+
+        public static string DirectionToString(Direction direction) {
+            switch (direction) {
+                case Direction.Down:
+                    return "Down";
+                case Direction.Up:
+                    return "Up";
+                default:
+                    return "Side";
+            }
+        }
     }
 }

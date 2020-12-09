@@ -41,7 +41,7 @@ namespace Vienna.Combat {
 
         private void Aim() {
             Vector2 mouseWorldSpace = Camera.main.ScreenToWorldPoint(mousePosition);
-            Vector2 directionVector = (mouseWorldSpace - (Vector2)transform.position).normalized;
+            Vector2 directionVector = (mouseWorldSpace - ((Vector2)transform.position + (Vector2.up * 0.5f))).normalized;
             var angle = 180 - Vector2.SignedAngle(Vector2.down, directionVector);
             direction = Direction.Up;
             if (angle >= 45 && angle <= 135) {

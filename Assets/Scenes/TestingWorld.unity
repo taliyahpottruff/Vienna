@@ -13270,9 +13270,9 @@ MonoBehaviour:
   species: 0
   firstName: Rob
   lastName: Boss
-  hairType: Short Hair
-  topType: T-Shirt
-  bottomType: Pants
+  hairType: Double Buns
+  topType: Plaid Shirt
+  bottomType: Skirt
   health: 50
   maxHealth: 100
   healthEffects: []

@@ -30,6 +30,12 @@ namespace Vienna {
                         }
 					});
 					break;
+				case "Pistol":
+					Initialize(new Gun() {
+						Name = "Pistol",
+						Sprite = "Pistol"
+					});
+					break;
 				default:
 					Initialize(new Food("Egg"));
 					break;

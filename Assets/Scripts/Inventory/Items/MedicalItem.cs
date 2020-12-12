@@ -7,8 +7,8 @@ namespace Vienna.Items {
 	public class MedicalItem : IBaseItem, IConsumable, IStackable {
 		public string Name { get; set; }
 		public string Sprite { get; set; }
-		public int stack { get; set; }
-		public int maxStack { get; set; }
+		public int Stack { get; set; }
+		public int MaxStack { get; set; }
 
 		// Properties
 		public HealthEffect healthEffect = new HealthEffect() { secondsRemaining = 30, effects = new Dictionary<string, object>() { { "healing", 5f } } };
@@ -22,12 +22,12 @@ namespace Vienna.Items {
 		public MedicalItem(string name, string sprite, int amount, int maxStack) {
 			this.Name = name;
 			this.Sprite = sprite;
-			stack = amount;
-			this.maxStack = maxStack;
+			Stack = amount;
+			this.MaxStack = maxStack;
 		}
 
 		public int GetAmount() {
-			return stack;
+			return Stack;
 		}
 
 		public int Consume(Living user, int amount) {
@@ -38,8 +38,8 @@ namespace Vienna.Items {
 		}
 
 		public int Remove(int amount) {
-			stack = Mathf.Max(stack - amount, 0);
-			return stack;
+			Stack = Mathf.Max(Stack - amount, 0);
+			return Stack;
 		}
 
 		public int Use(Living user) {

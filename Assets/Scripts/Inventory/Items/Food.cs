@@ -7,8 +7,8 @@ namespace Vienna.Items {
 	public class Food : IBaseItem, IConsumable, IStackable {
 		public string Name { get; set; }
 		public string Sprite { get; set; }
-		public int stack { get; set; }
-		public int maxStack { get; set; }
+		public int Stack { get; set; }
+		public int MaxStack { get; set; }
 
 		public Food(string name) : this(name, name, 1) { }
 
@@ -19,12 +19,12 @@ namespace Vienna.Items {
 		public Food(string name, string sprite, int amount, int maxStack) {
 			this.Name = name;
 			this.Sprite = sprite;
-			stack = amount;
-			this.maxStack = maxStack;
+			Stack = amount;
+			this.MaxStack = maxStack;
 		}
 
 		public int GetAmount() {
-			return stack;
+			return Stack;
 		}
 
 		public int Use(Living user) {
@@ -38,8 +38,8 @@ namespace Vienna.Items {
 		}
 
 		public int Remove(int amount) {
-			stack = Mathf.Max(stack - amount, 0);
-			return stack;
+			Stack = Mathf.Max(Stack - amount, 0);
+			return Stack;
 		}
 	}
 }

@@ -1690,7 +1690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb12319ddbfc034a9902f15d86b2c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellsPerRow: 3
+  cellsPerRow: 5
 --- !u!114 &572224937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11830,7 +11830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 572224934}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1

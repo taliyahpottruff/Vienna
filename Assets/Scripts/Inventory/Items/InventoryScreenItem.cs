@@ -5,13 +5,19 @@ using TMPro;
 
 namespace Vienna.Items {
 	public class InventoryScreenItem : MonoBehaviour {
-		public int inventoryIndex;
+		public int inventoryIndex = -1;
 		public Inventory inventory, transferTo;
 
 		[SerializeField]
 		private Image image;
 		[SerializeField]
 		private TextMeshProUGUI title;
+
+		public void Clear() {
+			inventoryIndex = -1;
+			image.sprite = null;
+			title.text = "Weapon";
+        }
 
 		public void Initialize(Inventory inventory, int index) {
 			//Set values
@@ -30,12 +36,14 @@ namespace Vienna.Items {
 		}
 
 		public void Use() {
-			if (transferTo == null) {
-				//Use the item if no transfer
-				inventory.UseItem(inventoryIndex);
-			} else {
-				//If a transfer is available, do that
-				transferTo.Add(inventory.RemoveItem(inventoryIndex));
+			if (inventoryIndex >= 0) {
+				if (transferTo == null) {
+					//Use the item if no transfer
+					inventory.UseItem(inventoryIndex);
+				} else {
+					//If a transfer is available, do that
+					transferTo.Add(inventory.RemoveItem(inventoryIndex));
+				}
 			}
 		}
 	}

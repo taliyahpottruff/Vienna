@@ -2,11 +2,13 @@
 
 namespace Vienna.Items {
     [Serializable]
-    public class Gun : IBaseItem, IWeapon {
+    public class Gun : IBaseItem, IWeapon, IEquippable {
         public string Name { get => name; set => name = value; }
         public string Sprite { get => sprite; set => sprite = value; }
+        public bool Equipped { get => equipped; set => equipped = value; }
 
         private string name, sprite;
+        private bool equipped;
 
         public float Attack(float attack) {
             throw new System.NotImplementedException();
@@ -18,7 +20,8 @@ namespace Vienna.Items {
 
         public int Use(Living user) {
             // Equip the weapon
-            return (user.EquipWeapon(this)) ? 1 : 0;
+            Equipped = user.EquipWeapon(this);
+            return 1;
         }
     }
 }

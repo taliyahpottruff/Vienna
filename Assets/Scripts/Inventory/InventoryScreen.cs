@@ -7,6 +7,7 @@ namespace Vienna {
 	public class InventoryScreen : MonoBehaviour {
 		public Inventory inventory, observed;
 		public Transform content, observedContent;
+		public InventoryScreenItem equippedWeapon;
 
 		[SerializeField]
 		private GameObject displayItemPrefab;
@@ -36,12 +37,24 @@ namespace Vienna {
 			foreach (GameObject obj in displayItems) {
 				Destroy(obj);
 			}
+			equippedWeapon.Clear();
 		}
 
 		private void UpdateUI() {
 			//Clear display then redraw
 			ClearDisplay(displayItems);
 			for (int i = 0; i < inventory.Items.Count; i++) {
+				var item = inventory.Items[i];
+				if (item is IEquippable) {
+					if ((item as IEquippable).Equipped) {
+						if (item is IWeapon) { // If item is Equipped Weapon
+							equippedWeapon.Initialize(inventory, i);
+                        }
+
+						continue;
+                    }
+                }
+
 				GameObject obj = Instantiate<GameObject>(displayItemPrefab, content);
 				InventoryScreenItem displayItem = obj.GetComponent<InventoryScreenItem>();
 				displayItem.Initialize(inventory, i, observed);

@@ -77,6 +77,13 @@ namespace Vienna {
         public bool EquipWeapon(IWeapon weapon) {
             if (species != Species.Human) return false;
 
+            // Unequip if same weapon
+            if (equippedWeapon == weapon) {
+                equippedWeapon = null;
+                animator.LoadWeaponSprites();
+                return false;
+            }
+
             equippedWeapon = weapon;
             animator.LoadWeaponSprites();
             return true;

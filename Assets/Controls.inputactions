@@ -232,6 +232,28 @@
                 },
                 {
                     "name": "",
+                    "id": "d9987d43-e006-4bf3-9b1d-052f03fe0cf2",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "20283570-0d3e-40cc-83e0-7d9b13c1c96b",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "045beb3b-eb16-4175-8bf2-5befd59ac5d4",
                     "path": "<Keyboard>/enter",
                     "interactions": "",

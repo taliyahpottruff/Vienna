@@ -17,8 +17,8 @@ namespace Vienna.Items {
         }
 
         public int Use(Living user) {
-            Attack(25f);
-            return 0;
+            // Equip the weapon
+            return (user.EquipWeapon(this)) ? 1 : 0;
         }
     }
 }

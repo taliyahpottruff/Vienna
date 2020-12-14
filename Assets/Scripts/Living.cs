@@ -16,6 +16,7 @@ namespace Vienna {
         private float healingMultiplier = 1f;
         private float healthMultiplier = 1f;
         public List<HealthEffect> healthEffects = new List<HealthEffect>();
+        public IWeapon equippedWeapon = null;
 
         private Coroutine regenCoroutine;
         private int effectLength = 0;
@@ -71,6 +72,14 @@ namespace Vienna {
 
         public List<IBaseItem> GetInventoryItems() {
             return GetComponent<Inventory>().Items;
+        }
+
+        public bool EquipWeapon(IWeapon weapon) {
+            if (species != Species.Human) return false;
+
+            equippedWeapon = weapon;
+            animator.LoadWeaponSprites();
+            return true;
         }
 
         private IEnumerator RegenerateHealth(bool cooldown = true) {

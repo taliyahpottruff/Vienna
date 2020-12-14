@@ -9,7 +9,7 @@ namespace Vienna {
 	public class LivingAnimator : MonoBehaviour {
 		public float animationSpeed = 0.1f;
 		public List<Sprite> upSprites, downSprites, sideSprites;
-		public SpriteRenderer hairRenderer, topRenderer, bottomRenderer, coreRenderer, headRenderer;
+		public SpriteRenderer hairRenderer, topRenderer, bottomRenderer, coreRenderer, headRenderer, weaponRenderer;
 
 		private SpriteRenderer sr;
 		private Rigidbody2D rb;
@@ -18,7 +18,8 @@ namespace Vienna {
 		private bool calculateDirection = true;
 		private Direction direction = Direction.Down;
 		private bool moving;
-		private Sprite[] hairSprites, topSprites, bottomSprites, coreSprites, headSprites;
+		[SerializeField]
+		private Sprite[] hairSprites, topSprites, bottomSprites, coreSprites, headSprites, weaponSprites;
 
 		#region State Definitions
 		private Dictionary<string, int[]> animationStates = new Dictionary<string, int[]>() {
@@ -80,6 +81,7 @@ namespace Vienna {
 			LoadBottomSprites();
 			LoadCoreSprites();
 			LoadHeadSprites();
+			LoadWeaponSprites();
         }
 
         public void LoadHairSprites() {
@@ -101,6 +103,15 @@ namespace Vienna {
 		public void LoadHeadSprites() {
 			headSprites = Resources.LoadAll<Sprite>("Sprites/Head");
 		}
+
+		public void LoadWeaponSprites() {
+			if (living.equippedWeapon != null) {
+				var name = living.equippedWeapon.Sprite;
+				weaponSprites = Resources.LoadAll<Sprite>($"Sprites/Weapons/{name}");
+			} else {
+				weaponSprites = new Sprite[] { };
+            }
+        }
 		#endregion
 
 		private IEnumerator Animate() {
@@ -124,13 +135,16 @@ namespace Vienna {
 					if (coreIndex >= state.Length) coreIndex = 0;
 
 					var spriteIndex = state[coreIndex];
+					var weaponOffset = 24;
 
 					// Render
 					if (coreRenderer != null) coreRenderer.sprite = Utils.GetSpriteFromArray(spriteIndex, coreSprites);
 					if (topRenderer != null) topRenderer.sprite = Utils.GetSpriteFromArray(spriteIndex, topSprites);
+					if (weaponRenderer != null) weaponRenderer.sprite = Utils.GetSpriteFromArray(spriteIndex - weaponOffset, weaponSprites);
 				} else {
 					if (coreRenderer != null) coreRenderer.sprite = Utils.GetSpriteFromArray(animIndex, coreSprites, true);
 					if (topRenderer != null) topRenderer.sprite = Utils.GetSpriteFromArray(animIndex, topSprites, true);
+					if (weaponRenderer != null) weaponRenderer.sprite = null;
 				}
 
 				index++;

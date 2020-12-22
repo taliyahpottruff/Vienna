@@ -207,6 +207,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""5db26b6e-b402-41ba-b6b6-b92af5c5cfec"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -297,6 +305,28 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Pointer Position"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""87df8a49-6f0d-47e8-9c0e-e7bbc156702d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22611384-64d9-4c31-97de-df48436a09a7"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -339,6 +369,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
         m_UI_DevConsole = m_UI.FindAction("Dev Console", throwIfNotFound: true);
         m_UI_PointerPosition = m_UI.FindAction("Pointer Position", throwIfNotFound: true);
+        m_UI_Select = m_UI.FindAction("Select", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -450,6 +481,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_UI_Submit;
     private readonly InputAction m_UI_DevConsole;
     private readonly InputAction m_UI_PointerPosition;
+    private readonly InputAction m_UI_Select;
     public struct UIActions
     {
         private @Controls m_Wrapper;
@@ -459,6 +491,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Submit => m_Wrapper.m_UI_Submit;
         public InputAction @DevConsole => m_Wrapper.m_UI_DevConsole;
         public InputAction @PointerPosition => m_Wrapper.m_UI_PointerPosition;
+        public InputAction @Select => m_Wrapper.m_UI_Select;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -483,6 +516,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @PointerPosition.started -= m_Wrapper.m_UIActionsCallbackInterface.OnPointerPosition;
                 @PointerPosition.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnPointerPosition;
                 @PointerPosition.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnPointerPosition;
+                @Select.started -= m_Wrapper.m_UIActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnSelect;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -502,6 +538,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @PointerPosition.started += instance.OnPointerPosition;
                 @PointerPosition.performed += instance.OnPointerPosition;
                 @PointerPosition.canceled += instance.OnPointerPosition;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
             }
         }
     }
@@ -538,5 +577,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnSubmit(InputAction.CallbackContext context);
         void OnDevConsole(InputAction.CallbackContext context);
         void OnPointerPosition(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
     }
 }

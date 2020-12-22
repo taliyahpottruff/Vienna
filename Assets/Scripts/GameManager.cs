@@ -94,7 +94,7 @@ namespace Vienna {
 
 		public void QuitGame() {
 			if (Application.isEditor) {
-				EditorApplication.isPlaying = false;
+				//EditorApplication.isPlaying = false;
 			} else {
 				Debug.Log("Quitting game with Code 0");
 				Application.Quit(0);

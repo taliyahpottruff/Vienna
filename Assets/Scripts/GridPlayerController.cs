@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class GridPlayerController : MonoBehaviour {
     public NavMeshAgent agent;
     public Animator animator;
-    public AnimatorController idle, walking;
 
     private Controls controls;
     private Vector2 mousePosition;
@@ -23,9 +22,9 @@ public class GridPlayerController : MonoBehaviour {
         if (agent.hasPath != lastCondition) {
             lastCondition = agent.hasPath;
             if (lastCondition) {
-                animator.runtimeAnimatorController = walking;
+                animator.SetTrigger("Walk");
             } else {
-                animator.runtimeAnimatorController = idle;
+                animator.SetTrigger("Stop Walk");
             }
         }
     }

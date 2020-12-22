@@ -1,18 +1,33 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Animations;
+using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 public class GridPlayerController : MonoBehaviour {
     public NavMeshAgent agent;
+    public Animator animator;
+    public AnimatorController idle, walking;
 
     private Controls controls;
     private Vector2 mousePosition;
+    private bool lastCondition = false;
 
     private void Start() {
         controls = new Controls();
         controls.UI.Select.performed += Select_performed;
         controls.UI.PointerPosition.performed += ctx => mousePosition = ctx.ReadValue<Vector2>();
         controls.Enable();
+    }
+
+    private void Update() {
+        if (agent.hasPath != lastCondition) {
+            lastCondition = agent.hasPath;
+            if (lastCondition) {
+                animator.runtimeAnimatorController = walking;
+            } else {
+                animator.runtimeAnimatorController = idle;
+            }
+        }
     }
 
     private void Select_performed(InputAction.CallbackContext obj) {

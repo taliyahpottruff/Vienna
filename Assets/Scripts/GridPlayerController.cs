@@ -7,6 +7,9 @@ public class GridPlayerController : MonoBehaviour {
 
     private bool lastCondition = false;
 
+    public delegate void FinishMove();
+    public event FinishMove OnFinished;
+
     private void Update() {
         // Set animation
         if (agent.hasPath != lastCondition) {
@@ -15,6 +18,7 @@ public class GridPlayerController : MonoBehaviour {
                 animator.SetTrigger("Walk");
             } else {
                 animator.SetTrigger("Stop Walk");
+                OnFinished.Invoke();
             }
         }
     }

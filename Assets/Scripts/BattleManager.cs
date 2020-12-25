@@ -12,13 +12,14 @@ namespace Grid {
         private Controls controls;
         private Vector2 mousePosition;
         private Vector3 hoveredPosition;
-        private bool gridHovered = false;
+        private bool gridHovered, charMoving;
         private RaycastHit hit;
         private List<Faction> factions = new List<Faction>();
         [SerializeField]
         private int phase = 0, turn = 1;
         [SerializeField]
         private GridPlayerController[] player;
+        private GridPlayerController activeChar;
 
         private void Awake() {
             factions.Add(new Faction(player, true));
@@ -32,7 +33,7 @@ namespace Grid {
         }
 
         private void Update() {
-            if (factions[phase].isPlayer) {
+            if (factions[phase].isPlayer && !charMoving) {
                 // Handle mouse
                 var ray = Camera.main.ScreenPointToRay(mousePosition);
                 gridHovered = Physics.Raycast(ray, out hit, Mathf.Infinity, gridSelectionMask);
@@ -65,11 +66,21 @@ namespace Grid {
         }
 
         private void Select_performed(InputAction.CallbackContext obj) {
-            if (gridHovered && factions[phase].isPlayer) {
-                factions[phase].Characters[0].agent.SetDestination(hoveredPosition);
+            if (gridHovered && factions[phase].isPlayer && !charMoving) {
+                activeChar = factions[phase].Characters[0];
+                charMoving = true;
+                activeChar.agent.SetDestination(hoveredPosition);
                 gridSelector.SetActive(false);
-                NextPhase();
+                activeChar.OnFinished += Character_OnFinished;
+                
             }
+        }
+
+        private void Character_OnFinished() {
+            charMoving = false;
+            activeChar.OnFinished -= Character_OnFinished;
+            NextPhase();
+            Debug.Log("Finished moving...");
         }
     }
 

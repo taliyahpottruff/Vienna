@@ -17,8 +17,14 @@ namespace Combat {
             controls = new Controls();
             controls.Player.Move.performed += ctx => inputVector = ctx.ReadValue<Vector2>();
             controls.UI.ScrollWheel.performed += ctx => cameraTransform.Translate(Vector3.forward * ctx.ReadValue<Vector2>().y / 100f);
-            controls.Player.ToggleLook.performed += ctx => lookToggled = true;
-            controls.Player.ToggleLook.canceled += ctx => lookToggled = false;
+            controls.Player.ToggleLook.performed += ctx => { 
+                lookToggled = true;
+                Cursor.lockState = CursorLockMode.Locked;
+            };
+            controls.Player.ToggleLook.canceled += ctx => { 
+                lookToggled = false;
+                Cursor.lockState = CursorLockMode.None;
+            };
             controls.Player.Look.performed += ctx => mouseDelta = ctx.ReadValue<Vector2>();
             controls.Enable();
         }
@@ -33,7 +39,8 @@ namespace Combat {
             }
 
             if (lookToggled) {
-                transform.Rotate(Vector3.up * mouseDelta.x * (mouseSensitivity / 100f), Space.World);
+                transform.Rotate(Vector3.up * -mouseDelta.x * (mouseSensitivity / 100f), Space.World);
+                transform.Rotate(Vector3.right * mouseDelta.y * (mouseSensitivity / 100f), Space.Self);
             } 
         }
     }

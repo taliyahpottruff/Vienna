@@ -39,8 +39,8 @@ namespace Combat {
             }
 
             if (lookToggled) {
-                transform.Rotate(Vector3.up * -mouseDelta.x * (mouseSensitivity / 100f), Space.World);
-                transform.Rotate(Vector3.right * mouseDelta.y * (mouseSensitivity / 100f), Space.Self);
+                transform.Rotate(Vector3.up * -mouseDelta.x * mouseSensitivity * Time.deltaTime, Space.World);
+                transform.Rotate(Vector3.right * mouseDelta.y * mouseSensitivity * Time.deltaTime, Space.Self);
             } 
         }
     }

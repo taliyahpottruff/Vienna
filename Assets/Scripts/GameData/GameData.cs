@@ -34,7 +34,7 @@ namespace Vienna.Data {
 				skinColorR = playerSR.color.r,
 				skinColorG = playerSR.color.g,
 				skinColorB = playerSR.color.b,
-				hairColorR = player.animator.hairRenderer.color.r,
+				/*hairColorR = player.animator.hairRenderer.color.r,
 				hairColorG = player.animator.hairRenderer.color.g,
 				hairColorB = player.animator.hairRenderer.color.b,
 				topColorR = player.animator.topRenderer.color.r,
@@ -42,7 +42,7 @@ namespace Vienna.Data {
 				topColorB = player.animator.topRenderer.color.b,
 				bottomColorR = player.animator.bottomRenderer.color.r,
 				bottomColorG = player.animator.bottomRenderer.color.g,
-				bottomColorB = player.animator.bottomRenderer.color.b,
+				bottomColorB = player.animator.bottomRenderer.color.b,*/
 				health = player.health,
 				maxHealth = player.maxHealth,
 				inventory = player.GetInventoryItems(),

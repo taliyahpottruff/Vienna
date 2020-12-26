@@ -5,8 +5,6 @@ using Vienna.Data;
 using Vienna.Items;
 
 namespace Vienna {
-    [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(LivingAnimator))]
     public abstract class Living : MonoBehaviour {
         public Species species = Species.Human;
         public string firstName;
@@ -21,11 +19,7 @@ namespace Vienna {
         private Coroutine regenCoroutine;
         private int effectLength = 0;
 
-        public LivingAnimator animator;
-
         private void Start() {
-            animator = GetComponent<LivingAnimator>();
-
             regenCoroutine = StartCoroutine(RegenerateHealth(false));
             StartCoroutine(ProcessEffects());
         }
@@ -55,19 +49,15 @@ namespace Vienna {
             topType = data.topType;
             bottomType = data.bottomType;
             GetComponent<SpriteRenderer>().color = new Color(data.skinColorR, data.skinColorG, data.skinColorB);
-            animator.hairRenderer.color = new Color(data.hairColorR, data.hairColorG, data.hairColorB);
+            /*animator.hairRenderer.color = new Color(data.hairColorR, data.hairColorG, data.hairColorB);
             animator.topRenderer.color = new Color(data.topColorR, data.topColorG, data.topColorB);
-            animator.bottomRenderer.color = new Color(data.bottomColorR, data.bottomColorG, data.bottomColorB);
+            animator.bottomRenderer.color = new Color(data.bottomColorR, data.bottomColorG, data.bottomColorB);*/
             healthEffects = (data.healthEffects != null) ? data.healthEffects : new List<HealthEffect>();
             Inventory inventory = GetComponent<Inventory>();
             if (inventory != null) inventory.SetItems(data.inventory);
 
             // Then set other stuff
             transform.position = data.position;
-
-            // Load spirte
-            animator = GetComponent<LivingAnimator>();
-            animator.LoadSprites();
         }
 
         public List<IBaseItem> GetInventoryItems() {
@@ -80,12 +70,12 @@ namespace Vienna {
             // Unequip if same weapon
             if (equippedWeapon == weapon) {
                 equippedWeapon = null;
-                animator.LoadWeaponSprites();
+                //animator.LoadWeaponSprites();
                 return false;
             }
 
             equippedWeapon = weapon;
-            animator.LoadWeaponSprites();
+            //animator.LoadWeaponSprites();
             return true;
         }
 

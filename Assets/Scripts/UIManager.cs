@@ -13,8 +13,12 @@ namespace Vienna {
 
 		private InventoryScreen screen;
 
+		public static UIManager singleton;
+
 		private void Awake() {
 			screen = inventory.GetComponentInParent<InventoryScreen>();
+
+			singleton = this;
 		}
 
 		public void SetPauseScreen(bool newPaused) {

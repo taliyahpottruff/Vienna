@@ -30,17 +30,8 @@ namespace Grid {
             controls = new Controls();
             controls.UI.Select.performed += Select_performed;
             controls.UI.PointerPosition.performed += ctx => mousePosition = ctx.ReadValue<Vector2>();
-            controls.UI.Pause.performed += Pause_performed;
+            controls.UI.Pause.performed += ctx => Debug.Log(GameManager.singleton.TogglePause());
             controls.Enable();
-        }
-
-        private void Pause_performed(InputAction.CallbackContext obj) {
-            if (!UIManager.singleton.PausedElsewhere()) {
-                GameManager.singleton.Paused = !GameManager.singleton.Paused;
-                UIManager.singleton.SetPauseScreen(GameManager.singleton.Paused);
-            } else {
-                if (UIManager.singleton.CanToggleInventory()) GameManager.singleton.Paused = UIManager.singleton.ToggleInventory();
-            }
         }
 
         private void Update() {

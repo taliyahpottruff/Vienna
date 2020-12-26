@@ -13,7 +13,6 @@ namespace Vienna {
 		private void Awake() {
 			uiManager = GameObject.FindGameObjectWithTag("Main Canvas").GetComponent<UIManager>();
 			controls = new Controls();
-			controls.UI.Pause.performed += Pause_performed;
 			controls.UI.Inventory.performed += Inventory_performed;
 			controls.Player.Interact.performed += Interact_performed;
 		}
@@ -51,15 +50,6 @@ namespace Vienna {
 		private void Inventory_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
 			if (uiManager.CanToggleInventory()) {
 				GameManager.singleton.Paused = uiManager.ToggleInventory();
-			}
-		}
-
-		private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
-			if (!uiManager.PausedElsewhere()) {
-				GameManager.singleton.Paused = !GameManager.singleton.Paused;
-				uiManager.SetPauseScreen(GameManager.singleton.Paused);
-			} else {
-				if (uiManager.CanToggleInventory()) GameManager.singleton.Paused = uiManager.ToggleInventory();
 			}
 		}
 

@@ -20,6 +20,8 @@ namespace Vienna {
                 } else {
 					Time.timeScale = 1;
                 }
+
+				OnPaused.Invoke(m_paused);
 			} 
 		}
 		private bool m_paused = false;
@@ -60,6 +62,9 @@ namespace Vienna {
 			}
 		}
 
+		public delegate void Paused_Delegate(bool newState);
+		public event Paused_Delegate OnPaused;
+
 		private void Awake() {
 			singleton = this;
 
@@ -73,6 +78,20 @@ namespace Vienna {
 			Player player = FindObjectOfType<Player>();
 			if (player != null) camera.SetTarget(player.transform);
 		}*/
+
+		/// <summary>
+		/// Toggles paused state of game.
+		/// </summary>
+		/// <returns>The new paused state</returns>
+		public bool TogglePause() {
+			if (Paused) {
+				Paused = false;
+            } else {
+				Paused = true;
+            }
+
+			return Paused;
+        }
 
 		public void LoadGame(bool newGame = false) {
 			UIManager uiManager = FindObjectOfType<UIManager>();

@@ -21,7 +21,22 @@ namespace Vienna {
 			singleton = this;
 		}
 
-		public void SetPauseScreen(bool newPaused) {
+        private void Start() {
+            GameManager.singleton.OnPaused += OnPausedToggle;
+        }
+
+        private void OnPausedToggle(bool paused) {
+			if (paused) {
+				if (!inventory.activeSelf) SetPauseScreen(true);
+            } else {
+				SetPauseScreen(false);
+				inventory.SetActive(false);
+				observedInventory.SetActive(false);
+				screen.Unobserve();
+			}
+		}
+
+        public void SetPauseScreen(bool newPaused) {
 			vitals.SetActive(!newPaused);
 			pauseScreen.SetActive(newPaused);
 		}

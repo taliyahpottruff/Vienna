@@ -23,7 +23,7 @@ namespace Vienna {
 			} 
 		}
 		private bool m_paused = false;
-		public new GameCamera camera;
+		//public new GameCamera camera;
 
 		[SerializeField]
 		private GameObject loadingScreen;
@@ -68,11 +68,11 @@ namespace Vienna {
 			}
 		}
 
-		private void OnEnable() {
+		/*private void OnEnable() {
 			//Try to find the player and set the camera target
 			Player player = FindObjectOfType<Player>();
 			if (player != null) camera.SetTarget(player.transform);
-		}
+		}*/
 
 		public void LoadGame(bool newGame = false) {
 			UIManager uiManager = FindObjectOfType<UIManager>();
@@ -137,7 +137,7 @@ namespace Vienna {
 
 			//Once loading is done
 			Living player = FindObjectOfType<Player>();
-			camera.SetTarget(player.transform);
+			//camera.SetTarget(player.transform);
 			if (!newGame) {
 				if (GameData.Load()) {
 					Debug.Log("Load successful!");

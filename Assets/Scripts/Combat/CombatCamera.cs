@@ -5,6 +5,7 @@ namespace Combat {
     public class CombatCamera : MonoBehaviour {
         [Range(0f, 10f)]
         public float speed = 4f;
+        public Transform cameraTransform;
 
         private Controls controls;
         private Vector2 inputVector;
@@ -12,6 +13,7 @@ namespace Combat {
         private void Start() {
             controls = new Controls();
             controls.Player.Move.performed += ctx => inputVector = ctx.ReadValue<Vector2>();
+            controls.UI.ScrollWheel.performed += ctx => cameraTransform.Translate(Vector3.forward * ctx.ReadValue<Vector2>().y / 100f);
             controls.Enable();
         }
 

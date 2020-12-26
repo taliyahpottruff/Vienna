@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-/*
- * AUTHOR: Trenton Pottruff
- */
+// AUTHOR: Taliyah Pottruff
 
 namespace Vienna {
 	public class UIManager : MonoBehaviour {
@@ -23,6 +19,10 @@ namespace Vienna {
 
         private void Start() {
             GameManager.singleton.OnPaused += OnPausedToggle;
+        }
+
+        private void OnDestroy() {
+			GameManager.singleton.OnPaused -= OnPausedToggle;
         }
 
         private void OnPausedToggle(bool paused) {

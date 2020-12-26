@@ -43,6 +43,7 @@ namespace Vienna.CharacterCreator {
                 species = Species.Human
             });
             GameManager.singleton.LoadGame(true);
+            GameManager.singleton.mainCam.transform.parent.position = Vector3.zero;
         }
 
         public void SetHairType(string type) {

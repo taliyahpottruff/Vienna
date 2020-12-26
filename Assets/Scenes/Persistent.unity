@@ -1559,7 +1559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc8858bcc09cca4db0d2e9e1733acc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  mainCam: {fileID: 870248910}
   loadingScreen: {fileID: 409704113}
   progressBar: {fileID: 1955371008}
 --- !u!4 &1147457597

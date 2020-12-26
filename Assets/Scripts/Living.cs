@@ -48,7 +48,7 @@ namespace Vienna {
             hairType = data.hairType;
             topType = data.topType;
             bottomType = data.bottomType;
-            GetComponent<SpriteRenderer>().color = new Color(data.skinColorR, data.skinColorG, data.skinColorB);
+            //GetComponent<SpriteRenderer>().color = new Color(data.skinColorR, data.skinColorG, data.skinColorB);
             /*animator.hairRenderer.color = new Color(data.hairColorR, data.hairColorG, data.hairColorB);
             animator.topRenderer.color = new Color(data.topColorR, data.topColorG, data.topColorB);
             animator.bottomRenderer.color = new Color(data.bottomColorR, data.bottomColorG, data.bottomColorB);*/

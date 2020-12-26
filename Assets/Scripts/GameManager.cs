@@ -27,6 +27,8 @@ namespace Vienna {
 		private bool m_paused = false;
 		//public new GameCamera camera;
 
+		public Camera mainCam;
+
 		[SerializeField]
 		private GameObject loadingScreen;
 		[SerializeField]
@@ -73,17 +75,22 @@ namespace Vienna {
 			}
 		}
 
-		/*private void OnEnable() {
+        /*private void OnEnable() {
 			//Try to find the player and set the camera target
 			Player player = FindObjectOfType<Player>();
 			if (player != null) camera.SetTarget(player.transform);
 		}*/
 
-		/// <summary>
-		/// Toggles paused state of game.
-		/// </summary>
-		/// <returns>The new paused state</returns>
-		public bool TogglePause() {
+        private void OnDestroy() {
+			Debug.Log("Unloading Game Manager...");
+			singleton = null;
+        }
+
+        /// <summary>
+        /// Toggles paused state of game.
+        /// </summary>
+        /// <returns>The new paused state</returns>
+        public bool TogglePause() {
 			if (Paused) {
 				Paused = false;
             } else {
@@ -181,7 +188,8 @@ namespace Vienna {
 
 					Paused = false;
 				} else {
-					Debug.LogError("Load failed! Starting a new game...");
+					Debug.LogWarning("Load failed! Starting a new game...");
+					Paused = false;
 				}
 			} else {
 				player.LoadData(GameData.current.player);

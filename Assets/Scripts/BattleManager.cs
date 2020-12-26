@@ -30,8 +30,14 @@ namespace Grid {
             controls = new Controls();
             controls.UI.Select.performed += Select_performed;
             controls.UI.PointerPosition.performed += ctx => mousePosition = ctx.ReadValue<Vector2>();
-            controls.UI.Pause.performed += ctx => Debug.Log(GameManager.singleton.TogglePause());
+            controls.UI.Pause.performed += Pause_performed;
             controls.Enable();
+        }
+
+        private void OnDestroy() {
+            controls.UI.Select.performed -= Select_performed;
+            controls.UI.Pause.performed -= Pause_performed;
+            controls = null;
         }
 
         private void Update() {
@@ -50,6 +56,7 @@ namespace Grid {
                     gridSelector.transform.position = new Vector3(position.x, position.y + 0.01f, position.z);
                 }
             } else {
+                Debug.Log($"Paused {GameManager.singleton.Paused}");
                 if (gridSelector.activeSelf) gridSelector.SetActive(false);
             }
         }
@@ -75,6 +82,10 @@ namespace Grid {
                 gridSelector.SetActive(false);
                 activeChar.OnFinished += Character_OnFinished;
             }
+        }
+
+        private void Pause_performed(InputAction.CallbackContext obj) {
+            Debug.Log(GameManager.singleton.TogglePause());
         }
 
         private void Character_OnFinished() {

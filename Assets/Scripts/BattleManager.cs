@@ -18,8 +18,8 @@ namespace Grid {
         [SerializeField]
         private int phase = 0, turn = 1;
         [SerializeField]
-        private GridPlayerController[] player;
-        private GridPlayerController activeChar;
+        private CombatEntity[] player;
+        private CombatEntity activeChar;
 
         private void Awake() {
             factions.Add(new Faction(player, true));
@@ -88,13 +88,13 @@ namespace Grid {
         public readonly string name;
         public readonly bool isPlayer;
 
-        List<GridPlayerController> characters;
+        List<CombatEntity> characters;
 
-        public GridPlayerController[] Characters { get => characters.ToArray(); }
+        public CombatEntity[] Characters { get => characters.ToArray(); }
 
-        public Faction(GridPlayerController[] chars, bool player = false, string name = "Player") {
+        public Faction(CombatEntity[] chars, bool player = false, string name = "Player") {
             this.name = name;
-            characters = new List<GridPlayerController>(chars);
+            characters = new List<CombatEntity>(chars);
             isPlayer = player;
         }
     }

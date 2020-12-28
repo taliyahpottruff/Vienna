@@ -17,7 +17,7 @@ namespace Grid {
         private RaycastHit hit;
         private List<Faction> factions = new List<Faction>();
         [SerializeField]
-        private int phase = 0, turn = 1;
+        private int phase = 0, turn = 1, unit = 0;
         [SerializeField]
         private CombatEntity[] playerUnits, enemyUnits;
         private CombatEntity activeChar;
@@ -63,6 +63,15 @@ namespace Grid {
         }
 
         public void NextPhase() {
+            if (++unit < factions[phase].Characters.Length) {
+                if (!factions[phase].isPlayer) {
+                    var randomCoord = new Vector3(Random.Range(-12.5f, 12.5f), 0, Random.Range(-12.5f, 12.5f));
+                    MoveCharTo(randomCoord);
+                }
+                return;
+            }
+            unit = 0;
+
             if (++phase >= factions.Count) {
                 phase = 0;
                 turn++;
@@ -83,7 +92,7 @@ namespace Grid {
         }
 
         private void MoveCharTo(Vector3 position) {
-            activeChar = factions[phase].Characters[0];
+            activeChar = factions[phase].Characters[unit];
             charMoving = true;
             activeChar.agent.SetDestination(position);
             gridSelector.SetActive(false);

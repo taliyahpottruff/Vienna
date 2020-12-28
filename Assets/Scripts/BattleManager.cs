@@ -19,11 +19,12 @@ namespace Grid {
         [SerializeField]
         private int phase = 0, turn = 1;
         [SerializeField]
-        private CombatEntity[] player;
+        private CombatEntity[] playerUnits, enemyUnits;
         private CombatEntity activeChar;
 
         private void Awake() {
-            factions.Add(new Faction(player, true));
+            factions.Add(new Faction(playerUnits, true));
+            factions.Add(new Faction(enemyUnits, name: "Alien"));
         }
 
         private void Start() {
@@ -68,7 +69,8 @@ namespace Grid {
             }
 
             if (!factions[phase].isPlayer) {
-                NextPhase();
+                var randomCoord = new Vector3(Random.Range(-12.5f, 12.5f), 0, Random.Range(-12.5f, 12.5f));
+                MoveCharTo(randomCoord);
             }
 
             turnDisplay.text = $"Turn {turn}\n{factions[phase].name}'s Phase";
@@ -76,12 +78,16 @@ namespace Grid {
 
         private void Select_performed(InputAction.CallbackContext obj) {
             if (gridHovered && factions[phase].isPlayer && !charMoving) {
-                activeChar = factions[phase].Characters[0];
-                charMoving = true;
-                activeChar.agent.SetDestination(hoveredPosition);
-                gridSelector.SetActive(false);
-                activeChar.OnFinished += Character_OnFinished;
+                MoveCharTo(hoveredPosition);
             }
+        }
+
+        private void MoveCharTo(Vector3 position) {
+            activeChar = factions[phase].Characters[0];
+            charMoving = true;
+            activeChar.agent.SetDestination(position);
+            gridSelector.SetActive(false);
+            activeChar.OnFinished += Character_OnFinished;
         }
 
         private void Pause_performed(InputAction.CallbackContext obj) {

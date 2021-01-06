@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
@@ -67,20 +68,21 @@ namespace Grid {
             }
         }
 
-        public void NextPhase() {
+        public IEnumerator NextPhase() {
             var oldUnit = factions[phase].Characters[unit];
             oldUnit.agent.enabled = false;
             oldUnit.obstacle.enabled = true;
 
             if (++unit < factions[phase].Characters.Length) {
                 factions[phase].Characters[unit].obstacle.enabled = false;
+                yield return new WaitForSeconds(0.1f); // TODO: Examine how to make this solution better
                 factions[phase].Characters[unit].agent.enabled = true;
 
                 if (!factions[phase].isPlayer) {
                     var randomCoord = new Vector3(Random.Range(-12.5f, 12.5f), 0, Random.Range(-12.5f, 12.5f));
                     MoveCharTo(randomCoord);
                 }
-                return;
+                yield break;
             }
             unit = 0;
 
@@ -91,6 +93,7 @@ namespace Grid {
 
             var newUnit = factions[phase].Characters[unit];
             newUnit.obstacle.enabled = false;
+            yield return new WaitForSeconds(0.1f);
             newUnit.agent.enabled = true;
 
             if (!factions[phase].isPlayer) {
@@ -138,7 +141,7 @@ namespace Grid {
         private void Character_OnFinished() {
             charMoving = false;
             activeChar.OnFinished -= Character_OnFinished;
-            NextPhase();
+            StartCoroutine(NextPhase());
             Debug.Log("Finished moving...");
         }
     }

@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class CombatEntity : MonoBehaviour {
     public NavMeshAgent agent;
+    public NavMeshObstacle obstacle;
     public Animator animator;
 
     private bool lastCondition = false;

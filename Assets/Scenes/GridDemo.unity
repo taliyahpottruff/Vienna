@@ -1265,6 +1265,7 @@ MonoBehaviour:
   gridSelectionMask:
     serializedVersion: 2
     m_Bits: 3072
+  navMesh: {fileID: 0}
   turnDisplay: {fileID: 190889389}
   phase: 0
   turn: 1
@@ -1384,6 +1385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 462850357}
+  obstacle: {fileID: 462850361}
   animator: {fileID: 944218276}
   surroundingCover: []
 --- !u!195 &462850357
@@ -1393,7 +1395,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462850355}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -1441,6 +1443,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0fab8a2e6cc1e4586d52676068dee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!208 &462850361
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462850355}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &593096669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1456,7 +1474,7 @@ PrefabInstance:
     - target: {fileID: 8118585345989610073, guid: 15b58a6f5cd99274d92fead93cc0a99e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8118585345989610073, guid: 15b58a6f5cd99274d92fead93cc0a99e,
         type: 3}
@@ -1534,7 +1552,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593096670}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -1562,8 +1580,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 593096672}
+  obstacle: {fileID: 593096675}
   animator: {fileID: 593096671}
   surroundingCover: []
+--- !u!208 &593096675
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593096670}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &614199002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,7 +1823,7 @@ PrefabInstance:
     - target: {fileID: 8118585345989610073, guid: 15b58a6f5cd99274d92fead93cc0a99e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8118585345989610073, guid: 15b58a6f5cd99274d92fead93cc0a99e,
         type: 3}
@@ -1872,6 +1907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 666453543}
+  obstacle: {fileID: 666453545}
   animator: {fileID: 666453541}
   surroundingCover: []
 --- !u!195 &666453543
@@ -1881,7 +1917,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666453540}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -1896,6 +1932,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!208 &666453545
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666453540}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &695697620
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,7 +2787,7 @@ PrefabInstance:
     - target: {fileID: 1127641993931294342, guid: 8c15a8755d542c2439f248c02633bf50,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1127641993931294342, guid: 8c15a8755d542c2439f248c02633bf50,
         type: 3}
@@ -2998,7 +3050,7 @@ PrefabInstance:
     - target: {fileID: 6206875367254502729, guid: 4b5ab0dfd1f4d5c47bd83c48b39e36f7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6206875367254502729, guid: 4b5ab0dfd1f4d5c47bd83c48b39e36f7,
         type: 3}
@@ -3714,7 +3766,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1323777399
 GameObject:
@@ -4673,7 +4725,7 @@ PrefabInstance:
     - target: {fileID: 1612056693379254419, guid: 545e798f9145ee14e824f20c2e5cbc12,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1612056693379254419, guid: 545e798f9145ee14e824f20c2e5cbc12,
         type: 3}
@@ -4757,6 +4809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1621680219}
+  obstacle: {fileID: 1621680221}
   animator: {fileID: 1621680217}
   surroundingCover: []
 --- !u!195 &1621680219
@@ -4766,7 +4819,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621680216}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -4781,6 +4834,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!208 &1621680221
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621680216}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1623594218
 GameObject:
   m_ObjectHideFlags: 0
@@ -5127,7 +5196,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1721211147
 GameObject:

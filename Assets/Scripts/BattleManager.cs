@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using Vienna;
 
@@ -8,6 +9,7 @@ namespace Grid {
     public class BattleManager : MonoBehaviour {
         public GameObject gridSelector;
         public LayerMask gridSelectionMask;
+        public NavMeshSurface navMesh;
         public TextMeshProUGUI turnDisplay;
 
         private Controls controls;
@@ -33,6 +35,9 @@ namespace Grid {
             controls.UI.PointerPosition.performed += ctx => mousePosition = ctx.ReadValue<Vector2>();
             controls.UI.Pause.performed += Pause_performed;
             controls.Enable();
+
+            // Init units
+            InitializeUnits();
         }
 
         private void OnDestroy() {
@@ -63,7 +68,14 @@ namespace Grid {
         }
 
         public void NextPhase() {
+            var oldUnit = factions[phase].Characters[unit];
+            oldUnit.agent.enabled = false;
+            oldUnit.obstacle.enabled = true;
+
             if (++unit < factions[phase].Characters.Length) {
+                factions[phase].Characters[unit].obstacle.enabled = false;
+                factions[phase].Characters[unit].agent.enabled = true;
+
                 if (!factions[phase].isPlayer) {
                     var randomCoord = new Vector3(Random.Range(-12.5f, 12.5f), 0, Random.Range(-12.5f, 12.5f));
                     MoveCharTo(randomCoord);
@@ -77,12 +89,32 @@ namespace Grid {
                 turn++;
             }
 
+            var newUnit = factions[phase].Characters[unit];
+            newUnit.obstacle.enabled = false;
+            newUnit.agent.enabled = true;
+
             if (!factions[phase].isPlayer) {
                 var randomCoord = new Vector3(Random.Range(-12.5f, 12.5f), 0, Random.Range(-12.5f, 12.5f));
                 MoveCharTo(randomCoord);
             }
 
             turnDisplay.text = $"Turn {turn}\n{factions[phase].name}'s Phase";
+        }
+
+        private void InitializeUnits() {
+            for (int i = 0; i < factions.Count; i++) {
+                var faction = factions[i];
+
+                for (int j = 0; j < faction.Characters.Length; j++) {
+                    var unit = faction.Characters[j];
+                    if (i == 0 && j == 0) {
+                        unit.agent.enabled = true;
+                        continue;
+                    }
+
+                    unit.obstacle.enabled = true;
+                }
+            }
         }
 
         private void Select_performed(InputAction.CallbackContext obj) {

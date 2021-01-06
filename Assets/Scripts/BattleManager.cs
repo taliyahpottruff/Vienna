@@ -18,7 +18,7 @@ namespace Grid {
         private Vector3 hoveredPosition;
         private bool gridHovered, charMoving;
         private RaycastHit hit;
-        private List<Faction> factions = new List<Faction>();
+        private List<Faction> factions;
         [SerializeField]
         private int phase = 0, turn = 1, unit = 0;
         [SerializeField]
@@ -26,8 +26,10 @@ namespace Grid {
         private CombatEntity activeChar;
 
         private void Awake() {
-            factions.Add(new Faction(playerUnits, true));
-            factions.Add(new Faction(enemyUnits, name: "Alien"));
+            factions = new List<Faction>() {
+                new Faction(playerUnits, true),
+                new Faction(enemyUnits, name: "Alien")
+            };
         }
 
         private void Start() {
@@ -52,7 +54,7 @@ namespace Grid {
                 // Handle mouse
                 var ray = Camera.main.ScreenPointToRay(mousePosition);
                 gridHovered = Physics.Raycast(ray, out hit, Mathf.Infinity, gridSelectionMask);
-                var onGrid = gridHovered && hit.transform.tag.Equals("Grid");
+                var onGrid = gridHovered && hit.transform.CompareTag("Grid");
                 gridSelector.SetActive(onGrid);
 
                 if (onGrid) {
@@ -150,7 +152,7 @@ namespace Grid {
         public readonly string name;
         public readonly bool isPlayer;
 
-        List<CombatEntity> characters;
+        readonly List<CombatEntity> characters;
 
         public CombatEntity[] Characters { get => characters.ToArray(); }
 

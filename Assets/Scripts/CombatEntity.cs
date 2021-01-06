@@ -37,7 +37,7 @@ public class CombatEntity : MonoBehaviour {
         foreach (var obj in objects) {
             var cover = obj.transform.GetComponent<Cover>();
             if (cover != null) {
-                Debug.Log($"{gameObject.name}: Found cover at {obj.transform.position.ToString()}");
+                Debug.Log($"{gameObject.name}: Found cover at {obj.transform.position}");
                 surroundingCover.Add(cover);
             }
         }

@@ -34,7 +34,7 @@ namespace Vienna {
 		[SerializeField]
 		private Slider progressBar;
 
-		private List<AsyncOperation> scenesLoading = new List<AsyncOperation>();
+		private List<AsyncOperation> scenesLoading;
 		private float totalSceneProgress = 0f, masterVolume = 1f, soundVolume = 1f, musicVolume = 1f;
 
 		public float SoundVolume {
@@ -68,6 +68,7 @@ namespace Vienna {
 		public event Paused_Delegate OnPaused;
 
 		private void Awake() {
+			scenesLoading = new List<AsyncOperation>();
 			singleton = this;
 
 			if (SceneManager.sceneCount < 2) {
@@ -154,7 +155,7 @@ namespace Vienna {
 						totalSceneProgress += op1.progress;
 					}
 
-					totalSceneProgress = totalSceneProgress / scenesLoading.Count;
+					totalSceneProgress /= scenesLoading.Count;
 					progressBar.value = totalSceneProgress;
 
 					yield return null;

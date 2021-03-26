@@ -1387,6 +1387,7 @@ MonoBehaviour:
   agent: {fileID: 462850357}
   obstacle: {fileID: 462850361}
   animator: {fileID: 944218276}
+  equippedWeapon: {fileID: 11400000, guid: b41e1d6b1c9aa6147aa1ce25bc668d1b, type: 2}
   surroundingCover: []
 --- !u!195 &462850357
 NavMeshAgent:
@@ -1582,6 +1583,7 @@ MonoBehaviour:
   agent: {fileID: 593096672}
   obstacle: {fileID: 593096675}
   animator: {fileID: 593096671}
+  equippedWeapon: {fileID: 11400000, guid: b41e1d6b1c9aa6147aa1ce25bc668d1b, type: 2}
   surroundingCover: []
 --- !u!208 &593096675
 NavMeshObstacle:
@@ -1909,6 +1911,7 @@ MonoBehaviour:
   agent: {fileID: 666453543}
   obstacle: {fileID: 666453545}
   animator: {fileID: 666453541}
+  equippedWeapon: {fileID: 11400000, guid: b41e1d6b1c9aa6147aa1ce25bc668d1b, type: 2}
   surroundingCover: []
 --- !u!195 &666453543
 NavMeshAgent:
@@ -4811,6 +4814,7 @@ MonoBehaviour:
   agent: {fileID: 1621680219}
   obstacle: {fileID: 1621680221}
   animator: {fileID: 1621680217}
+  equippedWeapon: {fileID: 11400000, guid: b41e1d6b1c9aa6147aa1ce25bc668d1b, type: 2}
   surroundingCover: []
 --- !u!195 &1621680219
 NavMeshAgent:

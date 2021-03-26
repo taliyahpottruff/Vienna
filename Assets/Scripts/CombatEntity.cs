@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Combat;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,6 +7,7 @@ public class CombatEntity : MonoBehaviour {
     public NavMeshAgent agent;
     public NavMeshObstacle obstacle;
     public Animator animator;
+    public Weapon equippedWeapon;
 
     private bool lastCondition = false;
     [SerializeField]
